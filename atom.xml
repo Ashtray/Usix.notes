@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[Usix'Notes]]></title>
+  
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2015-12-26T06:59:14.400Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name><![CDATA[Usix]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[OpenStack开源社区开发指南]]></title>
+    <link href="http://yoursite.com/2015/12/26/tips-on-contributing-to-openstack-source-community/"/>
+    <id>http://yoursite.com/2015/12/26/tips-on-contributing-to-openstack-source-community/</id>
+    <published>2015-12-26T02:12:12.000Z</published>
+    <updated>2015-12-26T06:59:14.400Z</updated>
+    <content type="html"><![CDATA[<p>OpenStack开源社区开发指南 </p>
+<p><a href="http://www.openstack.org/" title="OpenStack" target="_blank" rel="external">Openstack</a></p>
+<h2 id="u8D21_u732E_u65B9_u5F0F"><a href="#u8D21_u732E_u65B9_u5F0F" class="headerlink" title="贡献方式"></a>贡献方式</h2><ol>
+<li>BP(BluePrint)<br><br> 如果你要新增一项特性，那么你首先需要撰写一个BP，写明为什么你要这么做，怎么做，以及后果。一旦这个BP被通过了，你就可以按照自己的意愿开始干活了。</li>
+<li>Fix bug<br><br> <a href="https://bugs.launchpad.net/项目名" target="_blank" rel="external">https://bugs.launchpad.net/项目名</a> 这个页面中会显示特定项目的bug列表。你可以从中选择bug进行修复。</li>
+<li>Review <br><br> 在gerrit中，会显示很多其他人提交的patch，你可以review他人的代码并且给出评分。一般用户最多只能+1分，core review成员有+2分的能力。 一个patch能否被用过，决定于是否达到2个+2分的review。当然，如果你觉得他人的代码写的不够，做法有些妥当，那么-1分也是可以的。</li>
+</ol>
+<a id="more"></a>
+<h2 id="u4E0E_u793E_u533A_u4FDD_u6301_u8054_u7CFB"><a href="#u4E0E_u793E_u533A_u4FDD_u6301_u8054_u7CFB" class="headerlink" title="与社区保持联系"></a>与社区保持联系</h2><ol>
+<li>IRC<br><br>IRC是常用的即时聊天工具。OpenStack使用freenode进行通信。建议下载Xchat，连接freenode，然后就可以加入任何一个channel。 一般来说都是 openstack-项目名 例如openstack-nova就是nova项目的讨论组。</li>
+<li>Meeting<br><br>OpenStack各个项目都有属于自己的每周例会，在特定的频道中进行会议。一般是openstack-meeting-alt. 如果你有什么议题，可以在所在项目的wiki页面上的meeting agenda中添加，会议上会逐项审议，就可以讨论到你的议题了。比如，你写了一个BP，那么可能需要你在会议中提出来，由大家进行讨论，根据反馈结果进行修改，这样BP被通过的概率就会大大提高了。</li>
+</ol>
+<h2 id="u63D0_u4EA4PATCH"><a href="#u63D0_u4EA4PATCH" class="headerlink" title="提交PATCH"></a>提交PATCH</h2><ol>
+<li>注意commit信息<br><br> commit信息的写法很有讲究。一般是第一行写概要，指出这个patch做了什么，然后空2行写具体内容。最后，如果是实现一个bp，那么需要在commit信息中加上Implements: blueprint bp名称 。 这样一旦这个patch被merge了， 那么你所提出的bp就会被系统自动标注为已经实现。</li>
+<li>git-review<br><br> 所有的code review都是在gerrit平台上进行的。所以，我们要先配置好git-review才可以向平台提交patch。</li>
+</ol>
+<h2 id="OpenStack_u4EE3_u7801_u901A_u7528_u5E93"><a href="#OpenStack_u4EE3_u7801_u901A_u7528_u5E93" class="headerlink" title="OpenStack代码通用库"></a>OpenStack代码通用库</h2><ol>
+<li>Spinx<br><br> 这是一个文档生成工具，可以根据RST文档，自动生成HTML。Opentack大量使用了这个module.</li>
+<li>Pbr<br><br> 这是用于替代pathon setupuptools的 module。提供更加强大的功能：<ul>
+<li>自动整合spinx进行文档处理</li>
+<li>自动安装dependency，只需要我们在requirements.txt中写上module的名字和版本号。</li>
+<li>在git中自动产生AUTHORS和ChangeLog</li>
+<li>与git整合<br>当然，Openstack采用它作为安装工具。</li>
+</ul>
+</li>
+<li>tox<br><br>tox是一个测试工具，你只需要写好测试用例，配置好tox（tox.ini）然后运行tox就好了。它会自动安装测试过程中需要的包，并且它是运行在干净的虚拟环境中。</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>OpenStack开源社区开发指南 </p>
+<p><a href="http://www.openstack.org/" title="OpenStack">Openstack</a></p>
+<h2 id="u8D21_u732E_u65B9_u5F0F"><a href="#u8D21_u732E_u65B9_u5F0F" class="headerlink" title="贡献方式"></a>贡献方式</h2><ol>
+<li>BP(BluePrint)<br><br> 如果你要新增一项特性，那么你首先需要撰写一个BP，写明为什么你要这么做，怎么做，以及后果。一旦这个BP被通过了，你就可以按照自己的意愿开始干活了。</li>
+<li>Fix bug<br><br> <a href="https://bugs.launchpad.net/项目名">https://bugs.launchpad.net/项目名</a> 这个页面中会显示特定项目的bug列表。你可以从中选择bug进行修复。</li>
+<li>Review <br><br> 在gerrit中，会显示很多其他人提交的patch，你可以review他人的代码并且给出评分。一般用户最多只能+1分，core review成员有+2分的能力。 一个patch能否被用过，决定于是否达到2个+2分的review。当然，如果你觉得他人的代码写的不够，做法有些妥当，那么-1分也是可以的。</li>
+</ol>]]>
+    
+    </summary>
+    
+      <category term="OpenStack" scheme="http://yoursite.com/tags/OpenStack/"/>
+    
+      <category term="Opensource" scheme="http://yoursite.com/tags/Opensource/"/>
+    
+      <category term="nazca汀" scheme="http://yoursite.com/tags/nazca%E6%B1%80/"/>
+    
+      <category term="nazca汀" scheme="http://yoursite.com/categories/nazca%E6%B1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[主流浏览器配置PAC文件]]></title>
+    <link href="http://yoursite.com/2015/12/19/navigetor-pac/"/>
+    <id>http://yoursite.com/2015/12/19/navigetor-pac/</id>
+    <published>2015-12-19T02:12:12.000Z</published>
+    <updated>2015-12-26T07:01:10.046Z</updated>
+    <content type="html"><![CDATA[<h1 id="u4E3B_u6D41_u6D4F_u89C8_u5668_u914D_u7F6EPAC_u6587_u4EF6"><a href="#u4E3B_u6D41_u6D4F_u89C8_u5668_u914D_u7F6EPAC_u6587_u4EF6" class="headerlink" title="主流浏览器配置PAC文件"></a>主流浏览器配置PAC文件</h1><h2 id="5E__5E"><a href="#5E__5E" class="headerlink" title="^_^"></a>^_^</h2><h3 id="0x00__u4EC0_u4E48_u662FPAC_u6587_u4EF6"><a href="#0x00__u4EC0_u4E48_u662FPAC_u6587_u4EF6" class="headerlink" title="0x00 什么是PAC文件"></a>0x00 什么是PAC文件</h3><p>PAC (<code>Proxy Auto Config</code>) 是一个 <code>Script</code>；经由编写这个 <code>Script</code>，我们可以让系统判断在怎么样的情形下，要利用哪一台 <code>Proxy</code> 来进行联机。    </p>
+<blockquote>
+<p>那么，我们所用得<code>Proxy.pac</code>文件的本质是<code>javascript</code>的一个函数，通过设定各种条件（域名，IP等等），从而让浏览器加载的时候自动去寻找对应的代理服务器。</p>
+</blockquote>
+<p>@(eg:)</p>
+<pre><code>function FindProxyForURL(url, host) 
+{
+    if(isInNet(myIpAddress(), &quot;10.71.80.0&quot;, &quot;255.255.255.0&quot;))
+    {
+        return&quot;PROXY 112.186.227.85:8080&quot;;
+    }
+    return&quot;DIRECT&quot;;
+}
+</code></pre><a id="more"></a>
+<p>当浏览器加载这个<code>proxy.pac</code>文件之后，就会自动比较自己的IP地址，如果属于<code>10.71.80.0/24</code>这个范围，那么他就使用代理服务器<code>112.186.227.85:8080</code>，否则直接连接网络。</p>
+<blockquote>
+<p>当然，想要科学上网的怎么会这么简单呢，那么这里有福利下载代理文件</p>
+</blockquote>
+<p>以下文件是同学的研究生毕设，基于SOCKET5通讯，撞墙概率小，不会受到污染，望小范围传播 ##^_^##</p>
+<p><a href="http://hitwhtest.oss-cn-beijing.aliyuncs.com/hitwh.pac" target="_blank" rel="external">戳我戳我 -&gt;配置文件下载</a></p>
+<hr>
+<h2 id="u51E0_u6B3E_u6D4F_u89C8_u5668_u914D_u7F6EPAC_u6587_u4EF6"><a href="#u51E0_u6B3E_u6D4F_u89C8_u5668_u914D_u7F6EPAC_u6587_u4EF6" class="headerlink" title="几款浏览器配置PAC文件"></a>几款浏览器配置PAC文件</h2><h3 id="0x01_IE_u6D4F_u89C8_u5668_uFF08IE11_u9664_u5916_uFF09"><a href="#0x01_IE_u6D4F_u89C8_u5668_uFF08IE11_u9664_u5916_uFF09" class="headerlink" title="0x01 IE浏览器（IE11除外）"></a>0x01 IE浏览器（IE11除外）</h3><p>打开IE可以在选项（Option）-&gt;连接(Connection)-&gt;局域网设置（LAN setting） 中进行设置。（IE 11 禁用了本地PAC 解决方法在最后）</p>
+<p><img src="http://img1.51cto.com/attachment/201306/134106990.png" alt="setting"></p>
+<blockquote>
+<p>注意格式是</p>
+</blockquote>
+<pre><code>file://（文件路径）/proxy.pac
+</code></pre><blockquote>
+<p>与windows的路径<code>\</code>不一样 用<code>/</code>划分文件夹</p>
+</blockquote>
+<p><img src="http://img1.51cto.com/attachment/201306/134108267.png" alt="enter image description here"></p>
+<p>这样就设置好了</p>
+<hr>
+<h3 id="0x02_Chrome/Chromium_u6D4F_u89C8_u5668_u8BBE_u7F6E"><a href="#0x02_Chrome/Chromium_u6D4F_u89C8_u5668_u8BBE_u7F6E" class="headerlink" title="0x02  Chrome/Chromium浏览器设置"></a>0x02  Chrome/Chromium浏览器设置</h3><blockquote>
+<p><code>Chrome/Chromium</code>本身就是直接调用IE的代理设置，你可以直接在IE里设置，或者如下设置<br>Windows 上最新版本Chrome 46.0.2490.86 m  设置：<br>点击右上角的  三道杠-&gt;设置,拖到底部，点击“显示高级设置”，找到“网络”下边“更改代理服务器设置” 弹出上面的图一，就是IE浏览器的设置了，参考上面。</p>
+</blockquote>
+<p>版本较老的设置如下：</p>
+<blockquote>
+<p>点击浏览器右上角的扳手图标，选择“选项“-”高级选项“-”更改代理设置“，接下来Chrome会自动打开IE的代理设置窗口，设置方法可参考IE浏览器设置。</p>
+</blockquote>
+<hr>
+<h3 id="0x03_Opera_u6D4F_u89C8_u5668_u8BBE_u7F6E"><a href="#0x03_Opera_u6D4F_u89C8_u5668_u8BBE_u7F6E" class="headerlink" title="0x03 Opera浏览器设置"></a>0x03 Opera浏览器设置</h3><blockquote>
+<p>点击“工具“-”首选项“-”高级“-”网络“-”代理服务器“，最下方“使用自动代理服务器配置”在这里填入PAC文件的位置就可以利用PAC中设置的规则上网了。</p>
+</blockquote>
+<pre><code>PAC的路径格式和IE一样
+</code></pre><hr>
+<h3 id="0x04__u706B_u72D0_28Firefox_29_u6D4F_u89C8_u5668_u8BBE_u7F6E"><a href="#0x04__u706B_u72D0_28Firefox_29_u6D4F_u89C8_u5668_u8BBE_u7F6E" class="headerlink" title="0x04 火狐(Firefox)浏览器设置"></a>0x04 火狐(Firefox)浏览器设置</h3><blockquote>
+<p>打开火狐（Firefix）浏览器，点击右上角的“打开菜单”-&gt;“选项”；<br>切换到“高级”选项卡；<br>选择“网络” ；<br>点击“设置”按钮。<br>选择“自动代理配置（PAC）”；<br>填写pac文件在您电脑中的地址；<br>点击“确定”按钮；</p>
+</blockquote>
+<hr>
+<h3 id="0x05_IE_u5185_u6838_u7684_u6D4F_u89C8_u5668"><a href="#0x05_IE_u5185_u6838_u7684_u6D4F_u89C8_u5668" class="headerlink" title="0x05  IE内核的浏览器"></a>0x05  IE内核的浏览器</h3><blockquote>
+<p>世界之窗（The World）<br>傲游浏览器（Maxthon）<br>腾讯TT（Tencent Traveler）<br>爱帆浏览器（Avant Browser）<br>360安全浏览器（360SE）<br>搜狗浏览器（兼容模式）（Sougou Explorer）<br>瑞影浏览器（Rayying）</p>
+</blockquote>
+<p>以上浏览器都是IE内核的浏览器，按照0x01配置好IE浏览器，就能够使用了</p>
+<h3 id="0x06_IE11__u89E3_u51B3_u529E_u6CD5"><a href="#0x06_IE11__u89E3_u51B3_u529E_u6CD5" class="headerlink" title="0x06 IE11 解决办法"></a>0x06 IE11 解决办法</h3><p>说一下ie11以及在win8.1下需要注意的路径、模式和安全问题。</p>
+<ul>
+<li><p>路径问题：ie11不支持使用本地pac文件了，得用http或者https方式载入pac。非要用本地pac文件的话，可以通过修改注册表来实现。</p>
+<p>   [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\Internet Settings]<br>   “EnableLegacyAutoProxyFeatures”=dword:00000001<br>增加这项后就行了，如上图，注意不是反斜杠\ 网上很多东西都是对win8.1以前的系统适用的，要想正常使用就得用斜杠// 例如<code>file://c:/my.pac</code></p>
+<p>可以参考 <a href="http://blogs.msdn.com/b/ieinternals/archive/2013/10/11/web-proxy-configuration-and-ie11-changes.aspx" target="_blank" rel="external">MSDN的说明</a></p>
+</li>
+<li>模式问题：IE11不支持SOCKS5了。这也是搞了半天才弄清楚的。虽然lan设置-高级里面有“套接字（SOCKS）”的选项，但不知道是不是指低版本的SOCKS，反正IE11是不能直接在PAC里面用SOCKS5的，需要先自己转成http或https模式。</li>
+<li>安全问题：用了PAC后所有返回‘DIRECT’的网站都会在‘本地Intranet’安全区。这个区域的安全性一般是很低的，注意把‘保护模式’点上，安全性调高，并且在‘站点’中点掉箭头所指的选项。如果不管它的话IE11会降级成IE7甚至IE5模式。</li>
+</ul>
+<blockquote>
+<p>上面的那篇MSDN blog上 EricLaw 的文章讲得很详细。他一直在说不推荐用本地PAC文件，提供EnableLegacyAutoProxyFeatures只是暂时的，基于 File:// 的已经被弃用了，新的通过http和https方式来加载pac更好。我不太明白，为什么通过http和https来加载pac比通过File:// 好？仅仅是为了路径斜杠和反斜杠统一吗？其实我觉得通过http和https也是有很大风险的，如果黑客修改了你的pac文件，对敏感网站添加一个新的规则，替换掉你的服务器地址，你的敏感信息就可能被截获了跑到他的服务器上。</p>
+</blockquote>
+<pre><code>[说明：我用的系统是Win7 并没升级到 IE11 所以以上解决办法来自网络]
+</code></pre><hr>
+<blockquote>
+<p>注意：配置好代理后，需要<strong>重启浏览器</strong>使之生效！<br>注意：代理文件修改后，需要<strong>重新载入</strong>才会生效！</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>你们的光合作用  让我更好的生存<br>我的笔 能量 网络 说氧气 食物 阳光</p>
+</blockquote>
+<pre><code>plants for making oxygen
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="u4E3B_u6D41_u6D4F_u89C8_u5668_u914D_u7F6EPAC_u6587_u4EF6"><a href="#u4E3B_u6D41_u6D4F_u89C8_u5668_u914D_u7F6EPAC_u6587_u4EF6" class="headerlink" title="主流浏览器配置PAC文件"></a>主流浏览器配置PAC文件</h1><h2 id="5E__5E"><a href="#5E__5E" class="headerlink" title="^_^"></a>^_^</h2><h3 id="0x00__u4EC0_u4E48_u662FPAC_u6587_u4EF6"><a href="#0x00__u4EC0_u4E48_u662FPAC_u6587_u4EF6" class="headerlink" title="0x00 什么是PAC文件"></a>0x00 什么是PAC文件</h3><p>PAC (<code>Proxy Auto Config</code>) 是一个 <code>Script</code>；经由编写这个 <code>Script</code>，我们可以让系统判断在怎么样的情形下，要利用哪一台 <code>Proxy</code> 来进行联机。    </p>
+<blockquote>
+<p>那么，我们所用得<code>Proxy.pac</code>文件的本质是<code>javascript</code>的一个函数，通过设定各种条件（域名，IP等等），从而让浏览器加载的时候自动去寻找对应的代理服务器。</p>
+</blockquote>
+<p>@(eg:)</p>
+<pre><code>function FindProxyForURL(url, host) 
+{
+    if(isInNet(myIpAddress(), &quot;10.71.80.0&quot;, &quot;255.255.255.0&quot;))
+    {
+        return&quot;PROXY 112.186.227.85:8080&quot;;
+    }
+    return&quot;DIRECT&quot;;
+}
+</code></pre>]]>
+    
+    </summary>
+    
+      <category term="Ashtray刚" scheme="http://yoursite.com/tags/Ashtray%E5%88%9A/"/>
+    
+      <category term="facebook" scheme="http://yoursite.com/tags/facebook/"/>
+    
+      <category term="proxy" scheme="http://yoursite.com/tags/proxy/"/>
+    
+      <category term="script" scheme="http://yoursite.com/tags/script/"/>
+    
+      <category term="翻墙" scheme="http://yoursite.com/tags/%E7%BF%BB%E5%A2%99/"/>
+    
+      <category term="Ashtray刚" scheme="http://yoursite.com/categories/Ashtray%E5%88%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[C中文本与二进制方式]]></title>
+    <link href="http://yoursite.com/2015/11/11/N-file-open/"/>
+    <id>http://yoursite.com/2015/11/11/N-file-open/</id>
+    <published>2015-11-11T10:44:12.000Z</published>
+    <updated>2015-12-26T07:02:07.257Z</updated>
+    <content type="html"><![CDATA[<h3 id="u672C_u8D28"><a href="#u672C_u8D28" class="headerlink" title="本质"></a>本质</h3><p>我们都知道计算机的存储在物理上是二进制的，所以文本文件与二进制文件的区别并不是物理上的，而是</p>
+<pre><code>***逻辑上的***
+</code></pre><blockquote>
+<p>这两者只是在编码层次上有差异。</p>
+</blockquote>
+<p>简单来说，文本文件是基于字符编码的文件，常见的编码有ASCII编码，UNICODE编码等等。二进制文件是基于值编码的文件，你可以根据具体应用，指定某个值是什么意思（这样一个过程，可以看作是自定义编码）</p>
+<a id="more"></a>
+<blockquote>
+<p>从上面可以看出文本文件基本上是定长编码的(也有非定长的编码如UTF-8)，基于字符嘛，每个字符在具体编码中是固定的，ASCII码是8个比特的编码，UNICODE一般占16个比特。而二进制文件可看成是变长编码的，因为是值编码嘛，多少个比特代表一个值，完全由你决定。</p>
+</blockquote>
+<p>应该说Ｃ的文本读写与二进制的读写是一个编程层次上的问题，与具体的操作系统有关，所以＂用文本方式读写的文件一定是文本文件，用二进制读写的文件一定是二进制文件”这类观点是错误的．下面的讲述非明确指出操作系统类型，都暗指windows．Ｃ的文本方读写与二进制读写的差别仅仅体现在回车换行符的处理上．文本方式写时，每遇到一个</p>
+<pre><code>&apos;&apos;\n&apos;&apos;(0AH换行符)
+</code></pre><p>它将其换成</p>
+<pre><code>&apos;&apos;\r\n&apos;&apos;(0D0AH，回车换行)
+</code></pre><p>然后再写入文件；当文本读取时，它每遇到一个’’\r\n’’将其反变化为’’\n’’，然后送到读缓冲区．正因为文本方式有<code>&#39;&#39;\n&#39;&#39;－－&#39;&#39;\r\n&#39;&#39;</code>之间的转换，其存在转换耗时．二进制读写时，其不存在任何转换，直接将写缓冲区中数据写入文件．总地来说，从编程的角度来说，Ｃ中文本或二进制读写都是缓冲区与文件中二进制流的交互，只是文本读写时有回车换行的转换．所以当写缓冲区中无换行符<code>&#39;&#39;\n&#39;&#39;(0AH)</code>，文本写与二进制写的结果是一样的，同理，当文件中不存在<code>&#39;&#39;\r\n&#39;&#39;(0DH0AH)</code>时，文本读与二进制读的结果一样。</p>
+<p>对于内容为<code>“Ab123\r\n&quot;</code> 二进制（转化为16进制）码为<code>(41 62 31 32 33 0D 0A)</code>的文件,</p>
+<pre><code>pf1 = fopen(&quot;f:\\1.txt&quot;,&quot;r&quot;);//或者
+pf1 = fopen(&quot;f:\\1.txt&quot;,&quot;rb&quot;);
+for(int i=0;i &lt;6;i++){
+   fread(&amp;a[i],1,1,pf1);
+   printf(&quot;%0X &quot;,a[i]);
+}
+fclose(pf1);//关闭文件
+</code></pre><p>的结果分别为：</p>
+<pre><code>41 62 31 32 33 0A   
+41 62 31 32 33 0D  0A 
+</code></pre><blockquote>
+<p>5678的存储形式为：</p>
+</blockquote>
+<pre><code>ASCII码：   　00110101   00110110   00110111   00111000  （四个字节）
+</code></pre><p>5678的存储形式为：</p>
+<pre><code>二进制：      
+00010110   00101110  （两个字节）
+</code></pre><p>二进制文件和文本文件的唯一差异就是前者含有一些非标准输出的ASCII码。0x01就是非标准输出的ASCII码，</p>
+<p>0x61就是标准输出的ASCII码。</p>
+<hr>
+<blockquote>
+<p>你们的光合作用  让我更好的生存<br>我的笔 能量 网络 说氧气 食物 阳光</p>
+</blockquote>
+<pre><code>plants for making oxygen
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="u672C_u8D28"><a href="#u672C_u8D28" class="headerlink" title="本质"></a>本质</h3><p>我们都知道计算机的存储在物理上是二进制的，所以文本文件与二进制文件的区别并不是物理上的，而是</p>
+<pre><code>***逻辑上的***
+</code></pre><blockquote>
+<p>这两者只是在编码层次上有差异。</p>
+</blockquote>
+<p>简单来说，文本文件是基于字符编码的文件，常见的编码有ASCII编码，UNICODE编码等等。二进制文件是基于值编码的文件，你可以根据具体应用，指定某个值是什么意思（这样一个过程，可以看作是自定义编码）</p>]]>
+    
+    </summary>
+    
+      <category term="Ashtray刚" scheme="http://yoursite.com/tags/Ashtray%E5%88%9A/"/>
+    
+      <category term="C" scheme="http://yoursite.com/tags/C/"/>
+    
+      <category term="\r\n" scheme="http://yoursite.com/tags/r-n/"/>
+    
+      <category term="fileopen" scheme="http://yoursite.com/tags/fileopen/"/>
+    
+      <category term="Ashtray刚" scheme="http://yoursite.com/categories/Ashtray%E5%88%9A/"/>
+    
+  </entry>
+  
+</feed>

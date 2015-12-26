@@ -1,0 +1,823 @@
+<!doctype html>
+<html class="theme-next   use-motion ">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Ashtray刚,facebook,proxy,script,翻墙," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Usix'Notes" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.2" />
+
+
+
+
+
+
+<meta name="description" content="主流浏览器配置PAC文件^_^0x00 什么是PAC文件PAC (Proxy Auto Config) 是一个 Script；经由编写这个 Script，我们可以让系统判断在怎么样的情形下，要利用哪一台 Proxy 来进行联机。    
+
+那么，我们所用得Proxy.pac文件的本质是javascript的一个函数，通过设定各种条件（域名，IP等等），从而让浏览器加载的时候自动去寻找对应的代理服务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="主流浏览器配置PAC文件">
+<meta property="og:url" content="http://yoursite.com/2015/12/19/navigetor-pac/index.html">
+<meta property="og:site_name" content="Usix'Notes">
+<meta property="og:description" content="主流浏览器配置PAC文件^_^0x00 什么是PAC文件PAC (Proxy Auto Config) 是一个 Script；经由编写这个 Script，我们可以让系统判断在怎么样的情形下，要利用哪一台 Proxy 来进行联机。    
+
+那么，我们所用得Proxy.pac文件的本质是javascript的一个函数，通过设定各种条件（域名，IP等等），从而让浏览器加载的时候自动去寻找对应的代理服务">
+<meta property="og:image" content="http://img1.51cto.com/attachment/201306/134106990.png">
+<meta property="og:image" content="http://img1.51cto.com/attachment/201306/134108267.png">
+<meta property="og:updated_time" content="2015-12-26T07:01:10.046Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="主流浏览器配置PAC文件">
+<meta name="twitter:description" content="主流浏览器配置PAC文件^_^0x00 什么是PAC文件PAC (Proxy Auto Config) 是一个 Script；经由编写这个 Script，我们可以让系统判断在怎么样的情形下，要利用哪一台 Proxy 来进行联机。    
+
+那么，我们所用得Proxy.pac文件的本质是javascript的一个函数，通过设定各种条件（域名，IP等等），从而让浏览器加载的时候自动去寻找对应的代理服务">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: 'post',
+    motion: true
+  };
+</script>
+
+  <title> 主流浏览器配置PAC文件 | Usix'Notes </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?68f215d613b056526868c8f3e52b5745";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Usix'Notes</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分類
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            歸檔
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            標籤
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            關於
+          </a>
+        </li>
+      
+
+      
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                主流浏览器配置PAC文件
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2015-12-19T10:12:12+08:00" content="2015-12-19">
+              2015-12-19
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分類於
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Ashtray刚/" itemprop="url" rel="index">
+                    <span itemprop="name">Ashtray刚</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/12/19/navigetor-pac/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/19/navigetor-pac/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h1 id="u4E3B_u6D41_u6D4F_u89C8_u5668_u914D_u7F6EPAC_u6587_u4EF6"><a href="#u4E3B_u6D41_u6D4F_u89C8_u5668_u914D_u7F6EPAC_u6587_u4EF6" class="headerlink" title="主流浏览器配置PAC文件"></a>主流浏览器配置PAC文件</h1><h2 id="5E__5E"><a href="#5E__5E" class="headerlink" title="^_^"></a>^_^</h2><h3 id="0x00__u4EC0_u4E48_u662FPAC_u6587_u4EF6"><a href="#0x00__u4EC0_u4E48_u662FPAC_u6587_u4EF6" class="headerlink" title="0x00 什么是PAC文件"></a>0x00 什么是PAC文件</h3><p>PAC (<code>Proxy Auto Config</code>) 是一个 <code>Script</code>；经由编写这个 <code>Script</code>，我们可以让系统判断在怎么样的情形下，要利用哪一台 <code>Proxy</code> 来进行联机。    </p>
+<blockquote>
+<p>那么，我们所用得<code>Proxy.pac</code>文件的本质是<code>javascript</code>的一个函数，通过设定各种条件（域名，IP等等），从而让浏览器加载的时候自动去寻找对应的代理服务器。</p>
+</blockquote>
+<p>@(eg:)</p>
+<pre><code>function FindProxyForURL(url, host) 
+{
+    if(isInNet(myIpAddress(), &quot;10.71.80.0&quot;, &quot;255.255.255.0&quot;))
+    {
+        return&quot;PROXY 112.186.227.85:8080&quot;;
+    }
+    return&quot;DIRECT&quot;;
+}
+</code></pre><a id="more"></a>
+<p>当浏览器加载这个<code>proxy.pac</code>文件之后，就会自动比较自己的IP地址，如果属于<code>10.71.80.0/24</code>这个范围，那么他就使用代理服务器<code>112.186.227.85:8080</code>，否则直接连接网络。</p>
+<blockquote>
+<p>当然，想要科学上网的怎么会这么简单呢，那么这里有福利下载代理文件</p>
+</blockquote>
+<p>以下文件是同学的研究生毕设，基于SOCKET5通讯，撞墙概率小，不会受到污染，望小范围传播 ##^_^##</p>
+<p><a href="http://hitwhtest.oss-cn-beijing.aliyuncs.com/hitwh.pac" target="_blank" rel="external">戳我戳我 -&gt;配置文件下载</a></p>
+<hr>
+<h2 id="u51E0_u6B3E_u6D4F_u89C8_u5668_u914D_u7F6EPAC_u6587_u4EF6"><a href="#u51E0_u6B3E_u6D4F_u89C8_u5668_u914D_u7F6EPAC_u6587_u4EF6" class="headerlink" title="几款浏览器配置PAC文件"></a>几款浏览器配置PAC文件</h2><h3 id="0x01_IE_u6D4F_u89C8_u5668_uFF08IE11_u9664_u5916_uFF09"><a href="#0x01_IE_u6D4F_u89C8_u5668_uFF08IE11_u9664_u5916_uFF09" class="headerlink" title="0x01 IE浏览器（IE11除外）"></a>0x01 IE浏览器（IE11除外）</h3><p>打开IE可以在选项（Option）-&gt;连接(Connection)-&gt;局域网设置（LAN setting） 中进行设置。（IE 11 禁用了本地PAC 解决方法在最后）</p>
+<p><img src="http://img1.51cto.com/attachment/201306/134106990.png" alt="setting"></p>
+<blockquote>
+<p>注意格式是</p>
+</blockquote>
+<pre><code>file://（文件路径）/proxy.pac
+</code></pre><blockquote>
+<p>与windows的路径<code>\</code>不一样 用<code>/</code>划分文件夹</p>
+</blockquote>
+<p><img src="http://img1.51cto.com/attachment/201306/134108267.png" alt="enter image description here"></p>
+<p>这样就设置好了</p>
+<hr>
+<h3 id="0x02_Chrome/Chromium_u6D4F_u89C8_u5668_u8BBE_u7F6E"><a href="#0x02_Chrome/Chromium_u6D4F_u89C8_u5668_u8BBE_u7F6E" class="headerlink" title="0x02  Chrome/Chromium浏览器设置"></a>0x02  Chrome/Chromium浏览器设置</h3><blockquote>
+<p><code>Chrome/Chromium</code>本身就是直接调用IE的代理设置，你可以直接在IE里设置，或者如下设置<br>Windows 上最新版本Chrome 46.0.2490.86 m  设置：<br>点击右上角的  三道杠-&gt;设置,拖到底部，点击“显示高级设置”，找到“网络”下边“更改代理服务器设置” 弹出上面的图一，就是IE浏览器的设置了，参考上面。</p>
+</blockquote>
+<p>版本较老的设置如下：</p>
+<blockquote>
+<p>点击浏览器右上角的扳手图标，选择“选项“-”高级选项“-”更改代理设置“，接下来Chrome会自动打开IE的代理设置窗口，设置方法可参考IE浏览器设置。</p>
+</blockquote>
+<hr>
+<h3 id="0x03_Opera_u6D4F_u89C8_u5668_u8BBE_u7F6E"><a href="#0x03_Opera_u6D4F_u89C8_u5668_u8BBE_u7F6E" class="headerlink" title="0x03 Opera浏览器设置"></a>0x03 Opera浏览器设置</h3><blockquote>
+<p>点击“工具“-”首选项“-”高级“-”网络“-”代理服务器“，最下方“使用自动代理服务器配置”在这里填入PAC文件的位置就可以利用PAC中设置的规则上网了。</p>
+</blockquote>
+<pre><code>PAC的路径格式和IE一样
+</code></pre><hr>
+<h3 id="0x04__u706B_u72D0_28Firefox_29_u6D4F_u89C8_u5668_u8BBE_u7F6E"><a href="#0x04__u706B_u72D0_28Firefox_29_u6D4F_u89C8_u5668_u8BBE_u7F6E" class="headerlink" title="0x04 火狐(Firefox)浏览器设置"></a>0x04 火狐(Firefox)浏览器设置</h3><blockquote>
+<p>打开火狐（Firefix）浏览器，点击右上角的“打开菜单”-&gt;“选项”；<br>切换到“高级”选项卡；<br>选择“网络” ；<br>点击“设置”按钮。<br>选择“自动代理配置（PAC）”；<br>填写pac文件在您电脑中的地址；<br>点击“确定”按钮；</p>
+</blockquote>
+<hr>
+<h3 id="0x05_IE_u5185_u6838_u7684_u6D4F_u89C8_u5668"><a href="#0x05_IE_u5185_u6838_u7684_u6D4F_u89C8_u5668" class="headerlink" title="0x05  IE内核的浏览器"></a>0x05  IE内核的浏览器</h3><blockquote>
+<p>世界之窗（The World）<br>傲游浏览器（Maxthon）<br>腾讯TT（Tencent Traveler）<br>爱帆浏览器（Avant Browser）<br>360安全浏览器（360SE）<br>搜狗浏览器（兼容模式）（Sougou Explorer）<br>瑞影浏览器（Rayying）</p>
+</blockquote>
+<p>以上浏览器都是IE内核的浏览器，按照0x01配置好IE浏览器，就能够使用了</p>
+<h3 id="0x06_IE11__u89E3_u51B3_u529E_u6CD5"><a href="#0x06_IE11__u89E3_u51B3_u529E_u6CD5" class="headerlink" title="0x06 IE11 解决办法"></a>0x06 IE11 解决办法</h3><p>说一下ie11以及在win8.1下需要注意的路径、模式和安全问题。</p>
+<ul>
+<li><p>路径问题：ie11不支持使用本地pac文件了，得用http或者https方式载入pac。非要用本地pac文件的话，可以通过修改注册表来实现。</p>
+<p>   [HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\CurrentVersion\Internet Settings]<br>   “EnableLegacyAutoProxyFeatures”=dword:00000001<br>增加这项后就行了，如上图，注意不是反斜杠\ 网上很多东西都是对win8.1以前的系统适用的，要想正常使用就得用斜杠// 例如<code>file://c:/my.pac</code></p>
+<p>可以参考 <a href="http://blogs.msdn.com/b/ieinternals/archive/2013/10/11/web-proxy-configuration-and-ie11-changes.aspx" target="_blank" rel="external">MSDN的说明</a></p>
+</li>
+<li>模式问题：IE11不支持SOCKS5了。这也是搞了半天才弄清楚的。虽然lan设置-高级里面有“套接字（SOCKS）”的选项，但不知道是不是指低版本的SOCKS，反正IE11是不能直接在PAC里面用SOCKS5的，需要先自己转成http或https模式。</li>
+<li>安全问题：用了PAC后所有返回‘DIRECT’的网站都会在‘本地Intranet’安全区。这个区域的安全性一般是很低的，注意把‘保护模式’点上，安全性调高，并且在‘站点’中点掉箭头所指的选项。如果不管它的话IE11会降级成IE7甚至IE5模式。</li>
+</ul>
+<blockquote>
+<p>上面的那篇MSDN blog上 EricLaw 的文章讲得很详细。他一直在说不推荐用本地PAC文件，提供EnableLegacyAutoProxyFeatures只是暂时的，基于 File:// 的已经被弃用了，新的通过http和https方式来加载pac更好。我不太明白，为什么通过http和https来加载pac比通过File:// 好？仅仅是为了路径斜杠和反斜杠统一吗？其实我觉得通过http和https也是有很大风险的，如果黑客修改了你的pac文件，对敏感网站添加一个新的规则，替换掉你的服务器地址，你的敏感信息就可能被截获了跑到他的服务器上。</p>
+</blockquote>
+<pre><code>[说明：我用的系统是Win7 并没升级到 IE11 所以以上解决办法来自网络]
+</code></pre><hr>
+<blockquote>
+<p>注意：配置好代理后，需要<strong>重启浏览器</strong>使之生效！<br>注意：代理文件修改后，需要<strong>重新载入</strong>才会生效！</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>你们的光合作用  让我更好的生存<br>我的笔 能量 网络 说氧气 食物 阳光</p>
+</blockquote>
+<pre><code>plants for making oxygen
+</code></pre></span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Ashtray刚/" rel="tag">#Ashtray刚</a>
+          
+            <a href="/tags/facebook/" rel="tag">#facebook</a>
+          
+            <a href="/tags/proxy/" rel="tag">#proxy</a>
+          
+            <a href="/tags/script/" rel="tag">#script</a>
+          
+            <a href="/tags/翻墙/" rel="tag">#翻墙</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/11/N-file-open/" rel="next" title="C中文本与二进制方式">
+                <i class="fa fa-chevron-left"></i> C中文本与二进制方式
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/26/tips-on-contributing-to-openstack-source-community/" rel="prev" title="OpenStack开源社区开发指南">
+                OpenStack开源社区开发指南 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+        </div>
+
+        
+
+
+        
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/12/19/navigetor-pac/"
+           data-title="主流浏览器配置PAC文件" data-url="http://yoursite.com/2015/12/19/navigetor-pac/">
+      </div>
+    
+  </div>
+
+
+      </div>
+
+      
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/zbl.png" alt="Usix" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">Usix</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">分類</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">標籤</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://shagang.me" target="_blank">
+                  
+                    <i class="fa fa-web"></i> Usix
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/HITLG" target="_blank">
+                  
+                    <i class="fa fa-twitter"></i> Twitter
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/ashtrayhit" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i> Weibo
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">Links</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://shagang.shagang.me/" target="_blank">MindTalk</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#u4E3B_u6D41_u6D4F_u89C8_u5668_u914D_u7F6EPAC_u6587_u4EF6"><span class="nav-number">1.</span> <span class="nav-text">主流浏览器配置PAC文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5E__5E"><span class="nav-number">1.1.</span> <span class="nav-text">^_^</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0x00__u4EC0_u4E48_u662FPAC_u6587_u4EF6"><span class="nav-number">1.1.1.</span> <span class="nav-text">0x00 什么是PAC文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#u51E0_u6B3E_u6D4F_u89C8_u5668_u914D_u7F6EPAC_u6587_u4EF6"><span class="nav-number">1.2.</span> <span class="nav-text">几款浏览器配置PAC文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0x01_IE_u6D4F_u89C8_u5668_uFF08IE11_u9664_u5916_uFF09"><span class="nav-number">1.2.1.</span> <span class="nav-text">0x01 IE浏览器（IE11除外）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x02_Chrome/Chromium_u6D4F_u89C8_u5668_u8BBE_u7F6E"><span class="nav-number">1.2.2.</span> <span class="nav-text">0x02  Chrome/Chromium浏览器设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x03_Opera_u6D4F_u89C8_u5668_u8BBE_u7F6E"><span class="nav-number">1.2.3.</span> <span class="nav-text">0x03 Opera浏览器设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x04__u706B_u72D0_28Firefox_29_u6D4F_u89C8_u5668_u8BBE_u7F6E"><span class="nav-number">1.2.4.</span> <span class="nav-text">0x04 火狐(Firefox)浏览器设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x05_IE_u5185_u6838_u7684_u6D4F_u89C8_u5668"><span class="nav-number">1.2.5.</span> <span class="nav-text">0x05  IE内核的浏览器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0x06_IE11__u89E3_u51B3_u529E_u6CD5"><span class="nav-number">1.2.6.</span> <span class="nav-text">0x06 IE11 解决办法</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+      
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-next-heart fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Usix</span>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"usixnotes"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+    
+     
+
+
+    
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.2"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.2"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+<script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+<script type="text/javascript" src="/js/motion.js?v=0.4.5.2" id="motion.global"></script>
+
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+
+  
+  
+
+  
+  
+
+</body>
+</html>
