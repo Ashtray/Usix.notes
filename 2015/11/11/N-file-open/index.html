@@ -69,7 +69,7 @@
 这两者只是在编码层次上有差异。
 
 简单来说，文本文件是基于字符编码的文件，常见的编码有ASCII编码，UNICODE编码等等。二进制文件是基于值编码的文件，你可以根据具体应用，指定某个值是什么意思（这样一个过程，可以看作是自定义编码）">
-<meta property="og:updated_time" content="2015-12-26T07:02:07.257Z">
+<meta property="og:updated_time" content="2015-12-27T12:10:00.735Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C中文本与二进制方式">
 <meta name="twitter:description" content="本质我们都知道计算机的存储在物理上是二进制的，所以文本文件与二进制文件的区别并不是物理上的，而是
@@ -320,31 +320,19 @@
 <pre><code>&apos;&apos;\r\n&apos;&apos;(0D0AH，回车换行)
 </code></pre><p>然后再写入文件；当文本读取时，它每遇到一个’’\r\n’’将其反变化为’’\n’’，然后送到读缓冲区．正因为文本方式有<code>&#39;&#39;\n&#39;&#39;－－&#39;&#39;\r\n&#39;&#39;</code>之间的转换，其存在转换耗时．二进制读写时，其不存在任何转换，直接将写缓冲区中数据写入文件．总地来说，从编程的角度来说，Ｃ中文本或二进制读写都是缓冲区与文件中二进制流的交互，只是文本读写时有回车换行的转换．所以当写缓冲区中无换行符<code>&#39;&#39;\n&#39;&#39;(0AH)</code>，文本写与二进制写的结果是一样的，同理，当文件中不存在<code>&#39;&#39;\r\n&#39;&#39;(0DH0AH)</code>时，文本读与二进制读的结果一样。</p>
 <p>对于内容为<code>“Ab123\r\n&quot;</code> 二进制（转化为16进制）码为<code>(41 62 31 32 33 0D 0A)</code>的文件,</p>
-<pre><code>pf1 = fopen(&quot;f:\\1.txt&quot;,&quot;r&quot;);//或者
-pf1 = fopen(&quot;f:\\1.txt&quot;,&quot;rb&quot;);
-for(int i=0;i &lt;6;i++){
-   fread(&amp;a[i],1,1,pf1);
-   printf(&quot;%0X &quot;,a[i]);
-}
-fclose(pf1);//关闭文件
-</code></pre><p>的结果分别为：</p>
-<pre><code>41 62 31 32 33 0A   
-41 62 31 32 33 0D  0A 
-</code></pre><blockquote>
-<p>5678的存储形式为：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">pf1 = fopen(<span class="string">"f:\\1.txt"</span>,<span class="string">"r"</span>);<span class="comment">//或者</span></span><br><span class="line">pf1 = fopen(<span class="string">"f:\\1.txt"</span>,<span class="string">"rb"</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i &lt;<span class="number">6</span>;i++)&#123;</span><br><span class="line">   fread(&amp;a[i],<span class="number">1</span>,<span class="number">1</span>,pf1);</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">"%0X "</span>,a[i]);</span><br><span class="line">&#125;</span><br><span class="line">fclose(pf1);<span class="comment">//关闭文件</span></span><br></pre></td></tr></table></figure>
+<p>的结果分别为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">41</span> <span class="number">62</span> <span class="number">31</span> <span class="number">32</span> <span class="number">33</span> <span class="number">0</span>A   </span><br><span class="line"><span class="number">41</span> <span class="number">62</span> <span class="number">31</span> <span class="number">32</span> <span class="number">33</span> <span class="number">0</span>D  <span class="number">0</span>A</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>5678的存储形式为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ASCII码：   　<span class="number">00110101</span>   <span class="number">00110110</span>   <span class="number">00110111</span>   <span class="number">00111000</span>  （四个字节）</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<pre><code>ASCII码：   　00110101   00110110   00110111   00111000  （四个字节）
-</code></pre><p>5678的存储形式为：</p>
-<pre><code>二进制：      
-00010110   00101110  （两个字节）
-</code></pre><p>二进制文件和文本文件的唯一差异就是前者含有一些非标准输出的ASCII码。0x01就是非标准输出的ASCII码，</p>
+<p>5678的存储形式为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">二进制：      </span><br><span class="line"><span class="number">00010110</span>   <span class="number">00101110</span>  （两个字节）</span><br></pre></td></tr></table></figure></p>
+<p>二进制文件和文本文件的唯一差异就是前者含有一些非标准输出的ASCII码。0x01就是非标准输出的ASCII码，</p>
 <p>0x61就是标准输出的ASCII码。</p>
 <hr>
 <blockquote>
-<p>你们的光合作用  让我更好的生存<br>我的笔 能量 网络 说氧气 食物 阳光</p>
+<p>你们的光合作用  让我更好的生存<br>我的笔 能量 网络 说氧气 食物 阳光<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plants <span class="keyword">for</span> making oxygen</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<pre><code>plants for making oxygen
-</code></pre></span>
+</span>
       
     </div>
 

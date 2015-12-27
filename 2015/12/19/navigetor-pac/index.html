@@ -65,7 +65,7 @@
 那么，我们所用得Proxy.pac文件的本质是javascript的一个函数，通过设定各种条件（域名，IP等等），从而让浏览器加载的时候自动去寻找对应的代理服务">
 <meta property="og:image" content="http://img1.51cto.com/attachment/201306/134106990.png">
 <meta property="og:image" content="http://img1.51cto.com/attachment/201306/134108267.png">
-<meta property="og:updated_time" content="2015-12-26T07:01:10.046Z">
+<meta property="og:updated_time" content="2015-12-27T12:03:35.122Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="主流浏览器配置PAC文件">
 <meta name="twitter:description" content="主流浏览器配置PAC文件^_^0x00 什么是PAC文件PAC (Proxy Auto Config) 是一个 Script；经由编写这个 Script，我们可以让系统判断在怎么样的情形下，要利用哪一台 Proxy 来进行联机。    
@@ -302,15 +302,8 @@
 <p>那么，我们所用得<code>Proxy.pac</code>文件的本质是<code>javascript</code>的一个函数，通过设定各种条件（域名，IP等等），从而让浏览器加载的时候自动去寻找对应的代理服务器。</p>
 </blockquote>
 <p>@(eg:)</p>
-<pre><code>function FindProxyForURL(url, host) 
-{
-    if(isInNet(myIpAddress(), &quot;10.71.80.0&quot;, &quot;255.255.255.0&quot;))
-    {
-        return&quot;PROXY 112.186.227.85:8080&quot;;
-    }
-    return&quot;DIRECT&quot;;
-}
-</code></pre><a id="more"></a>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">FindProxyForURL</span>(<span class="params">url, host</span>) </span><br><span class="line"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(isInNet(myIpAddress(), <span class="string">"10.71.80.0"</span>, <span class="string">"255.255.255.0"</span>))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span><span class="string">"PROXY 112.186.227.85:8080"</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span><span class="string">"DIRECT"</span>;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>当浏览器加载这个<code>proxy.pac</code>文件之后，就会自动比较自己的IP地址，如果属于<code>10.71.80.0/24</code>这个范围，那么他就使用代理服务器<code>112.186.227.85:8080</code>，否则直接连接网络。</p>
 <blockquote>
 <p>当然，想要科学上网的怎么会这么简单呢，那么这里有福利下载代理文件</p>
@@ -406,8 +399,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/12/26/Low-level-web-crawler/" rel="prev" title="Python爬虫（一）">
-                Python爬虫（一） <i class="fa fa-chevron-right"></i>
+              <a href="/2015/12/26/tips-on-contributing-to-openstack-source-community/" rel="prev" title="OpenStack开源社区开发指南">
+                OpenStack开源社区开发指南 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
