@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Usix, Notes" />
+  <meta name="keywords" content="BigMax,Python,Selenium,爬虫," />
 
 
 
@@ -53,15 +53,25 @@
 
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Usix'Notes">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="Python爬虫（一）@(BigMax)[Python|Selenium|爬虫]
+
+为什么我要爬虫呢刚开始实习的时候，公司要求要统计一些bug数据，但是录入平台用的TX的平台，没有提供数据查询接口，数据库也不给查，真是sun了dog了。但是领导有需求，作为打工仔（实习廉价打工仔）就要满足老板要求。问了问老师傅怎么搞，“这个简单，爬虫就好了嘛。”。
+啥都不会，怎么爬虫呢对于一直作为技术渣的我，知道爬">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python爬虫（一）">
+<meta property="og:url" content="http://yoursite.com/2015/12/26/Low-level-web-crawler/index.html">
 <meta property="og:site_name" content="Usix'Notes">
-<meta property="og:description">
+<meta property="og:description" content="Python爬虫（一）@(BigMax)[Python|Selenium|爬虫]
+
+为什么我要爬虫呢刚开始实习的时候，公司要求要统计一些bug数据，但是录入平台用的TX的平台，没有提供数据查询接口，数据库也不给查，真是sun了dog了。但是领导有需求，作为打工仔（实习廉价打工仔）就要满足老板要求。问了问老师傅怎么搞，“这个简单，爬虫就好了嘛。”。
+啥都不会，怎么爬虫呢对于一直作为技术渣的我，知道爬">
+<meta property="og:updated_time" content="2015-12-27T11:58:41.981Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Usix'Notes">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Python爬虫（一）">
+<meta name="twitter:description" content="Python爬虫（一）@(BigMax)[Python|Selenium|爬虫]
+
+为什么我要爬虫呢刚开始实习的时候，公司要求要统计一些bug数据，但是录入平台用的TX的平台，没有提供数据查询接口，数据库也不给查，真是sun了dog了。但是领导有需求，作为打工仔（实习廉价打工仔）就要满足老板要求。问了问老师傅怎么搞，“这个简单，爬虫就好了嘛。”。
+啥都不会，怎么爬虫呢对于一直作为技术渣的我，知道爬">
 
 
 
@@ -73,7 +83,7 @@
   };
 </script>
 
-  <title> Usix'Notes </title>
+  <title> Python爬虫（一） | Usix'Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -104,9 +114,7 @@
 
 
 
-  <div class="container one-column 
-   page-home 
-">
+  <div class="container one-column page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -213,24 +221,9 @@
       <div class="main-inner">
         <div id="content" class="content">
           
-  <section id="posts" class="posts-expand">
 
+  <div id="posts" class="posts-expand">
     
-
-    
-    
-      
-      
-        
-        
-        
-      
-
-      
-    
-
-    
-      
 
   
   
@@ -250,119 +243,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2015/12/26/tips-on-contributing-to-openstack-source-community/" itemprop="url">
-                  OpenStack开源社区开发指南
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2015-12-26T10:12:12+08:00" content="2015-12-26">
-              2015-12-26
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/nazca汀/" itemprop="url" rel="index">
-                    <span itemprop="name">nazca汀</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/12/26/tips-on-contributing-to-openstack-source-community/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/26/tips-on-contributing-to-openstack-source-community/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>OpenStack开源社区开发指南 </p>
-<p><a href="http://www.openstack.org/" title="OpenStack">Openstack</a></p>
-<h2 id="u8D21_u732E_u65B9_u5F0F"><a href="#u8D21_u732E_u65B9_u5F0F" class="headerlink" title="贡献方式"></a>贡献方式</h2><ol>
-<li>BP(BluePrint)<br><br> 如果你要新增一项特性，那么你首先需要撰写一个BP，写明为什么你要这么做，怎么做，以及后果。一旦这个BP被通过了，你就可以按照自己的意愿开始干活了。</li>
-<li>Fix bug<br><br> <a href="https://bugs.launchpad.net/项目名">https://bugs.launchpad.net/项目名</a> 这个页面中会显示特定项目的bug列表。你可以从中选择bug进行修复。</li>
-<li>Review <br><br> 在gerrit中，会显示很多其他人提交的patch，你可以review他人的代码并且给出评分。一般用户最多只能+1分，core review成员有+2分的能力。 一个patch能否被用过，决定于是否达到2个+2分的review。当然，如果你觉得他人的代码写的不够，做法有些妥当，那么-1分也是可以的。</li>
-</ol>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/26/tips-on-contributing-to-openstack-source-community/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/12/26/Low-level-web-crawler/" itemprop="url">
-                  Python爬虫（一）
-                </a>
+                Python爬虫（一）
               
             
           </h1>
@@ -417,10 +298,7 @@
       
 
       
-        
-          <span itemprop="articleBody">
-            
-              <h1 id="Python_u722C_u866B_uFF08_u4E00_uFF09"><a href="#Python_u722C_u866B_uFF08_u4E00_uFF09" class="headerlink" title="Python爬虫（一）"></a>Python爬虫（一）</h1><p>@(BigMax)[Python|Selenium|爬虫]</p>
+        <span itemprop="articleBody"><h1 id="Python_u722C_u866B_uFF08_u4E00_uFF09"><a href="#Python_u722C_u866B_uFF08_u4E00_uFF09" class="headerlink" title="Python爬虫（一）"></a>Python爬虫（一）</h1><p>@(BigMax)[Python|Selenium|爬虫]</p>
 <hr>
 <h3 id="u4E3A_u4EC0_u4E48_u6211_u8981_u722C_u866B_u5462"><a href="#u4E3A_u4EC0_u4E48_u6211_u8981_u722C_u866B_u5462" class="headerlink" title="为什么我要爬虫呢"></a><strong>为什么我要爬虫呢</strong></h3><p>刚开始实习的时候，公司要求要统计一些bug数据，但是录入平台用的TX的平台，没有提供数据查询接口，数据库也不给查，真是sun了dog了。但是领导有需求，作为打工仔（实习廉价打工仔）就要满足老板要求。问了问老师傅怎么搞，“这个简单，爬虫就好了嘛。”。</p>
 <h3 id="u5565_u90FD_u4E0D_u4F1A_uFF0C_u600E_u4E48_u722C_u866B_u5462"><a href="#u5565_u90FD_u4E0D_u4F1A_uFF0C_u600E_u4E48_u722C_u866B_u5462" class="headerlink" title="啥都不会，怎么爬虫呢"></a><strong>啥都不会，怎么爬虫呢</strong></h3><p>对于一直作为技术渣的我，知道爬，知道虫，爬虫怎么搞，母鸡。于是开始了BD（CET-6一直不过，不好意思Google。不过对于技术类的Google真好用）。什么urllib2、requests、scrapy……各种入眼，对于Python都是刚入门的人来说，好晕~~~<br>有一个老师傅说了，“用selenium，跟之前用的appium差不多，简单”。查了下，是比较简单，就用这个了。</p>
@@ -459,255 +337,56 @@
 <p>比较推荐使用第一种方法，python自家能搞定的事情，最好还是不要让外人插手。</p>
 <hr>
 <p>第一篇博客，有点虎头蛇尾，慢慢搞。</p>
-
-            
-          </span>
-        
+</span>
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2015/12/19/navigetor-pac/" itemprop="url">
-                  主流浏览器配置PAC文件
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2015-12-19T10:12:12+08:00" content="2015-12-19">
-              2015-12-19
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Ashtray刚/" itemprop="url" rel="index">
-                    <span itemprop="name">Ashtray刚</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/BigMax/" rel="tag">#BigMax</a>
           
-
+            <a href="/tags/Python/" rel="tag">#Python</a>
           
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/12/19/navigetor-pac/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/12/19/navigetor-pac/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
+            <a href="/tags/Selenium/" rel="tag">#Selenium</a>
           
-
+            <a href="/tags/爬虫/" rel="tag">#爬虫</a>
           
-
         </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
       
 
       
-        
-          <h1 id="u4E3B_u6D41_u6D4F_u89C8_u5668_u914D_u7F6EPAC_u6587_u4EF6"><a href="#u4E3B_u6D41_u6D4F_u89C8_u5668_u914D_u7F6EPAC_u6587_u4EF6" class="headerlink" title="主流浏览器配置PAC文件"></a>主流浏览器配置PAC文件</h1><h2 id="5E__5E"><a href="#5E__5E" class="headerlink" title="^_^"></a>^_^</h2><h3 id="0x00__u4EC0_u4E48_u662FPAC_u6587_u4EF6"><a href="#0x00__u4EC0_u4E48_u662FPAC_u6587_u4EF6" class="headerlink" title="0x00 什么是PAC文件"></a>0x00 什么是PAC文件</h3><p>PAC (<code>Proxy Auto Config</code>) 是一个 <code>Script</code>；经由编写这个 <code>Script</code>，我们可以让系统判断在怎么样的情形下，要利用哪一台 <code>Proxy</code> 来进行联机。    </p>
-<blockquote>
-<p>那么，我们所用得<code>Proxy.pac</code>文件的本质是<code>javascript</code>的一个函数，通过设定各种条件（域名，IP等等），从而让浏览器加载的时候自动去寻找对应的代理服务器。</p>
-</blockquote>
-<p>@(eg:)</p>
-<pre><code>function FindProxyForURL(url, host) 
-{
-    if(isInNet(myIpAddress(), &quot;10.71.80.0&quot;, &quot;255.255.255.0&quot;))
-    {
-        return&quot;PROXY 112.186.227.85:8080&quot;;
-    }
-    return&quot;DIRECT&quot;;
-}
-</code></pre>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/12/19/navigetor-pac/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/12/19/navigetor-pac/" rel="next" title="主流浏览器配置PAC文件">
+                <i class="fa fa-chevron-left"></i> 主流浏览器配置PAC文件
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
+              <a href="/2015/12/26/tips-on-contributing-to-openstack-source-community/" rel="prev" title="OpenStack开源社区开发指南">
+                OpenStack开源社区开发指南 <i class="fa fa-chevron-right"></i>
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2015/11/11/N-file-open/" itemprop="url">
-                  C中文本与二进制方式
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            發表於
-            <time itemprop="dateCreated" datetime="2015-11-11T18:44:12+08:00" content="2015-11-11">
-              2015-11-11
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp; 分類於
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Ashtray刚/" itemprop="url" rel="index">
-                    <span itemprop="name">Ashtray刚</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2015/11/11/N-file-open/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2015/11/11/N-file-open/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <h3 id="u672C_u8D28"><a href="#u672C_u8D28" class="headerlink" title="本质"></a>本质</h3><p>我们都知道计算机的存储在物理上是二进制的，所以文本文件与二进制文件的区别并不是物理上的，而是</p>
-<pre><code>***逻辑上的***
-</code></pre><blockquote>
-<p>这两者只是在编码层次上有差异。</p>
-</blockquote>
-<p>简单来说，文本文件是基于字符编码的文件，常见的编码有ASCII编码，UNICODE编码等等。二进制文件是基于值编码的文件，你可以根据具体应用，指定某个值是什么意思（这样一个过程，可以看作是自定义编码）</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2015/11/11/N-file-open/#more" rel="contents">
-              閱讀全文 &raquo;
-            </a>
           </div>
-        
-      
-    </div>
-
-    <footer class="post-footer">
+        </div>
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
 
-  </section>
-
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
         </div>
@@ -716,6 +395,14 @@
 
 
         
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2015/12/26/Low-level-web-crawler/"
+           data-title="Python爬虫（一）" data-url="http://yoursite.com/2015/12/26/Low-level-web-crawler/">
+      </div>
+    
+  </div>
+
 
       </div>
 
@@ -736,8 +423,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" src="/images/zbl.png" alt="Usix" itemprop="image"/>
           <p class="site-author-name" itemprop="name">Usix</p>
@@ -823,6 +519,23 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python_u722C_u866B_uFF08_u4E00_uFF09"><span class="nav-number">1.</span> <span class="nav-text">Python爬虫（一）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#u4E3A_u4EC0_u4E48_u6211_u8981_u722C_u866B_u5462"><span class="nav-number">1.0.1.</span> <span class="nav-text">为什么我要爬虫呢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u5565_u90FD_u4E0D_u4F1A_uFF0C_u600E_u4E48_u722C_u866B_u5462"><span class="nav-number">1.0.2.</span> <span class="nav-text">啥都不会，怎么爬虫呢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u597Dlow_u7684_u201C_u722C_u866B_u201D"><span class="nav-number">1.0.3.</span> <span class="nav-text">好low的“爬虫”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selenium_uFF1F"><span class="nav-number">1.0.4.</span> <span class="nav-text">Selenium？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Use_It"><span class="nav-number">1.0.5.</span> <span class="nav-text">Use It</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#u4E00_u3001_u5B89_u88C5"><span class="nav-number">1.0.5.1.</span> <span class="nav-text">一、安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#u4E8C_u3001_u4F7F_u7528"><span class="nav-number">1.0.5.2.</span> <span class="nav-text">二、使用</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -904,6 +617,167 @@
   <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
   
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.2" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    motionMiddleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+      if (CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
 
   <script type="text/javascript" src="/js/bootstrap.js"></script>
 

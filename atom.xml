@@ -70,6 +70,68 @@
   </entry>
   
   <entry>
+    <title><![CDATA[Python爬虫（一）]]></title>
+    <link href="http://yoursite.com/2015/12/26/Low-level-web-crawler/"/>
+    <id>http://yoursite.com/2015/12/26/Low-level-web-crawler/</id>
+    <published>2015-12-26T02:12:12.000Z</published>
+    <updated>2015-12-27T11:58:41.981Z</updated>
+    <content type="html"><![CDATA[<h1 id="Python_u722C_u866B_uFF08_u4E00_uFF09"><a href="#Python_u722C_u866B_uFF08_u4E00_uFF09" class="headerlink" title="Python爬虫（一）"></a>Python爬虫（一）</h1><p>@(BigMax)[Python|Selenium|爬虫]</p>
+<hr>
+<h3 id="u4E3A_u4EC0_u4E48_u6211_u8981_u722C_u866B_u5462"><a href="#u4E3A_u4EC0_u4E48_u6211_u8981_u722C_u866B_u5462" class="headerlink" title="为什么我要爬虫呢"></a><strong>为什么我要爬虫呢</strong></h3><p>刚开始实习的时候，公司要求要统计一些bug数据，但是录入平台用的TX的平台，没有提供数据查询接口，数据库也不给查，真是sun了dog了。但是领导有需求，作为打工仔（实习廉价打工仔）就要满足老板要求。问了问老师傅怎么搞，“这个简单，爬虫就好了嘛。”。</p>
+<h3 id="u5565_u90FD_u4E0D_u4F1A_uFF0C_u600E_u4E48_u722C_u866B_u5462"><a href="#u5565_u90FD_u4E0D_u4F1A_uFF0C_u600E_u4E48_u722C_u866B_u5462" class="headerlink" title="啥都不会，怎么爬虫呢"></a><strong>啥都不会，怎么爬虫呢</strong></h3><p>对于一直作为技术渣的我，知道爬，知道虫，爬虫怎么搞，母鸡。于是开始了BD（CET-6一直不过，不好意思Google。不过对于技术类的Google真好用）。什么urllib2、requests、scrapy……各种入眼，对于Python都是刚入门的人来说，好晕~~~<br>有一个老师傅说了，“用selenium，跟之前用的appium差不多，简单”。查了下，是比较简单，就用这个了。</p>
+<h3 id="u597Dlow_u7684_u201C_u722C_u866B_u201D"><a href="#u597Dlow_u7684_u201C_u722C_u866B_u201D" class="headerlink" title="好low的“爬虫”"></a><strong>好low的“爬虫”</strong></h3><p>为什么加引号呢，因为严格来说，这不算我们传统意义上的网络爬虫，或者说爬虫都不算，但是最起码它帮我完成了老板的需求，毕竟也是第一次用Python实现功能，并且这个功能现在一直在用（当然实现方式早就换了）。所以，第一次写博客还是记录一下，这种low的不能再low的“爬虫”。</p>
+<hr>
+<h3 id="Selenium_uFF1F"><a href="#Selenium_uFF1F" class="headerlink" title="Selenium？"></a><strong>Selenium？</strong></h3><p>这是个什么？<a href="http://docs.seleniumhq.org/" target="_blank" rel="external">官网</a>是这么说的——Primarily, it is for automating web applications for testing purposes, but is certainly not limited to just that. Selenium是一套Web应用程序测试系统，这也就是我之前一直说这不是严格意义上的爬虫，但是官网都说了——What you do with that power is entirely up to you.那我就用它爬。</p>
+<h3 id="Use_It"><a href="#Use_It" class="headerlink" title="Use It"></a><strong>Use It</strong></h3><h4 id="u4E00_u3001_u5B89_u88C5"><a href="#u4E00_u3001_u5B89_u88C5" class="headerlink" title="一、安装"></a><strong>一、安装</strong></h4><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="keyword">install</span> selenium</span><br></pre></td></tr></table></figure>
+<p>pypi的源在国内用比较痛，所以可以用豆瓣的源来安装，地址:<a href="http://pypi.douban.com/simple/" target="_blank" rel="external">http://pypi.douban.com/simple/</a><br>使用方式：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip <span class="operator"><span class="keyword">install</span> -<span class="keyword">i</span> <span class="keyword">http</span>://pypi.douban.com/simple/ selenium <span class="comment">--trusted-host pypi.douban.com</span></span></span><br></pre></td></tr></table></figure></p>
+<h4 id="u4E8C_u3001_u4F7F_u7528"><a href="#u4E8C_u3001_u4F7F_u7528" class="headerlink" title="二、使用"></a><strong>二、使用</strong></h4><p>要想使用，首先你要告诉程序有这个东西，所以，<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.keys <span class="keyword">import</span> Keys</span><br></pre></td></tr></table></figure></p>
+<p>第一个包是为了使用webdriver，第二个包是为了使用Keys，用来干什么，接下来会说明。<br>既然selenium是对于Web应用程序的测试系统（当然了这里我们用来“爬虫”），那么就要让这个程序跑起来，在哪里跑呢？废话，浏览器！那么我们就用刚才导入的webdriver包来获取浏览器。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser = webdriver.Firefox()</span><br></pre></td></tr></table></figure></p>
+<p>这里我用的是Firefox，也可以用Chrome、IE。可能你会问我用的360浏览器，怎么获取相应的browser，这个问题就机智了，如此大神的浏览器，你可以给红衣大炮发个邮件，开发个360driver出来（有点狗血。）对于selenium，目前也就是知道一点皮毛尖儿，好在知乎有懂行的：</p>
+<blockquote>
+<p>Selenium 2.0包含了两种模式，一种是base在WebDriver上的，通过Java直接操作浏览器，这种方式只支持IE，Firefox，Chrome几种浏览器，当然，WebDriver中用于打开浏览器的代码并不复杂，如果你愿意的话，可以自己基于InternetExplorer来写一个新的360Driver。Selenium 2.0支持的另外一种模式是Selenium Core的JS模式，这种模式下你可以直接打开360浏览器，用360浏览器访问JS写的测试代码。当然，如果你想要通过RC模式启动360浏览器的话，仍然需要自己修改RC Server的代码，自己定一个新的命令参数来支持打开360浏览器。鉴于360的所谓双核浏览器其实只是在IE内核和Chrome内核上的封装，所以其实并没有什么必要专门用Selenium在360浏览器下测试Web应用的功能。    –<a href="http://www.zhihu.com/question/31510772/answer/52503774" target="_blank" rel="external">段念  知乎</a></p>
+</blockquote>
+<p>言归正传，拿到browser之后就该办正事了，就要输入要访问的url，怎么输入呢？<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.get(url)</span><br></pre></td></tr></table></figure></p>
+<p>如果程序就到这里的话，在命令行里python selenium_test.py，你就可以看到浏览器打开并跳转到了你要访问的界面。如果是做自动化测试的话，可以把browse.title这个东西print一下。</p>
+<p>进到要获取数据的界面之后怎么去操作想要操作的控件，或者要得到的数据呢？<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element = browser.find_element_by_id(<span class="string">'username'</span>)</span><br></pre></td></tr></table></figure></p>
+<p>此时的element就是页面中的某个控件了，因为我要爬取的数据要先登录，所以这里是获取了用户名输入框。对于页面中没有id的控件我们可以使用find_element_by_name、find_element_by_link_text、find_element_by_xpath等方法来获取相应的控件。</p>
+<p>还记在最开始我们导入了两个包吗？第二个包是Keys，现在就要用到了，因为我要登录，所以对于输入框我要填入用户名密码。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.send_keys(user_name)</span><br></pre></td></tr></table></figure></p>
+<p>现在你就可以看到本该你输入的信息已经在输入框里面了。send_keys这个方法还有个很实用的功能。想象下，当我们输入完用户名密码之后会老老实实的去点击登录按钮吗？现在你也可以不用去find登录按钮，只需要使用send_keys方法就可以了，把Keys.RETURN作为参数传给它，就OK了。PS：如果你有强迫症，非要点击一下的话，element.click()。</p>
+<p><strong>这里我要说下这个很LOW的“爬虫”比较方便的地方，就是登陆的处理，或者说对于任何POST的请求方式的处理，你可以不用费劲儿的去研究它到底传了一个什么样的form，甚至去研究登录时的一些验证之类的，因为selenium做的就是你做的。</strong></p>
+<p>对于获取的控件怎么获取它对应的数据呢？就可以通过这个控件的属性进行操作了。element.text这样当时就已经满足了我拿到表格里数据的需求了。</p>
+<p>for起来，这样要获取的所有项目中的表格里的数据，就一条条的插到了自己的数据库。python操作数据库，还停留在裸写SQL的阶段，看过老师傅的代码后，决定要改进了！以后再总结。</p>
+<p>for结束之后就可以关闭刚才程序唤出来的browser了。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">browser.close()</span><br></pre></td></tr></table></figure></p>
+<p>至此，数据就LOWLOW的“爬”出来了。</p>
+<p>###<strong>讲一下：</strong><br>有些自己踩得坑：</p>
+<ul>
+<li>因为都是在浏览器里做的，只是本该自己做的让selenium跑了起来，所以响应时间一定要考虑进去，当进行一些请求之后，要告诉程序等一等：time.sleep()。</li>
+<li>对于有些时间控件的操作。当时我就当做是普通的输入框进行的操作，每次send_keys把日期赋值进去，然后就可以看到日期填进去了，但是当对其他控件操作的时候，日期框就莫名其妙的空了。很久之前的问题了，当时傻逼了具体因为什么竟然忘了记录下来，现在在stackoverflow上还没有找到当时看的回答。解决方案有两种：<ol>
+<li>获取控件之后，先进行清除element.clear()，然后再send_keys()。OK！</li>
+<li>不使用send_keys()方式进行赋值，而是使用JS给其赋值（忘了说了，selenium是可以执行JS的）：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">js_ex = <span class="string">"document.getElementsByName(elementName)[0].setAttribute('value', '2015-08-31')"</span></span><br><span class="line">browser.execute_script(js_ex)</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<p>比较推荐使用第一种方法，python自家能搞定的事情，最好还是不要让外人插手。</p>
+<hr>
+<p>第一篇博客，有点虎头蛇尾，慢慢搞。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="Python_u722C_u866B_uFF08_u4E00_uFF09"><a href="#Python_u722C_u866B_uFF08_u4E00_uFF09" class="headerlink" title="Python爬虫（一）"></a>Pyt]]>
+    </summary>
+    
+      <category term="BigMax" scheme="http://yoursite.com/tags/BigMax/"/>
+    
+      <category term="Python" scheme="http://yoursite.com/tags/Python/"/>
+    
+      <category term="Selenium" scheme="http://yoursite.com/tags/Selenium/"/>
+    
+      <category term="爬虫" scheme="http://yoursite.com/tags/%E7%88%AC%E8%99%AB/"/>
+    
+      <category term="BigMax" scheme="http://yoursite.com/categories/BigMax/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[主流浏览器配置PAC文件]]></title>
     <link href="http://yoursite.com/2015/12/19/navigetor-pac/"/>
     <id>http://yoursite.com/2015/12/19/navigetor-pac/</id>
