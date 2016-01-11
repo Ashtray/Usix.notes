@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2015-12-27T12:02:00.671Z</updated>
+  <updated>2016-01-11T13:39:18.368Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,300 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Voip语音电话]]></title>
+    <link href="http://yoursite.com/2016/01/11/uac-uas/"/>
+    <id>http://yoursite.com/2016/01/11/uac-uas/</id>
+    <published>2016-01-11T13:10:12.000Z</published>
+    <updated>2016-01-11T13:39:18.368Z</updated>
+    <content type="html"><![CDATA[<h3 id="Pro"><a href="#Pro" class="headerlink" title="Pro"></a>Pro</h3><p>RFC3261 Voip  (RFC2543 修订)</p>
+<blockquote>
+<p>SIP协议采用Client/Server模型。<br><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-每一个请求（Request）触发服务器的一个操作；</span><br><span class="line">-每个操作被称为方法（<span class="function"><span class="keyword">Method</span>）；</span><br><span class="line">-每个请求除了指明具体方法外，还携带了一系列的头域（<span class="title">Header</span> <span class="title">field</span>）,这些头域携带了各种业务信息；</span><br><span class="line">-除了头域外，消息中还可以携带任意类型的消息体（<span class="title">Body</span>），呼叫中最常使用的<span class="title">SDP</span>信息就是通过消息体在<span class="title">Client</span>和<span class="title">Server</span>之间传递的。</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>Server从接收到请求到处理完毕，要回复多个临时响应(Response)，和一个终结响应(Response)，终结响应有且只有一个。<br><a id="more"></a></p>
+<hr>
+<h3 id="UAC_vs_UAS"><a href="#UAC_vs_UAS" class="headerlink" title="UAC vs UAS"></a>UAC vs UAS</h3><p>请求和他的所有响应构成一个事务<code>（Transaction）</code>，一个完整的呼叫过程包含多个事务，比如呼叫建立和呼叫释放就是两个相互独立的事务。</p>
+<blockquote>
+<p>用户代理（User Agent）是发起或者接收呼叫的逻辑实体。<br>用户代理客户端-UAC（User Agent Client），用于发起请求；</p>
+</blockquote>
+<p>用户代理服务器<code>-UAS（User Agent Server）</code>，用于接收请求。<code>UAC/UAS</code>的划分是针对一个事务的。</p>
+<p>UA的实际物理形态有：<code>IP Phone，SoftPhone，GateWay......</code><br><code>Proxy Server</code>作为一个网络逻辑实体代理客户端转发请求或者响应；同<code>Proxy Server</code>类似的还有一种设备是<code>B2BUA</code>。<br>blablabla··········<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">好蛋疼的实习题目  终于要做完了  日！！！</span><br></pre></td></tr></table></figure></p>
+<p>明天小组作实习汇报，希望不要问我太难的问题~</p>
+<p>God bless 么么么哒  ^_^</p>
+<hr>
+<blockquote>
+<p>你们的光合作用  让我更好的生存<br>我的笔 能量 网络 说氧气 食物 阳光<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plants <span class="keyword">for</span> making *oxygen*</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="Pro"><a href="#Pro" class="headerlink" title="Pro"></a>Pro</h3><p>RFC3261 Voip  (RFC2543 修订)</p>
+<blockquote>
+<p>SIP协议采用Client/Server模型。<br><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-每一个请求（Request）触发服务器的一个操作；</span><br><span class="line">-每个操作被称为方法（<span class="function"><span class="keyword">Method</span>）；</span><br><span class="line">-每个请求除了指明具体方法外，还携带了一系列的头域（<span class="title">Header</span> <span class="title">field</span>）,这些头域携带了各种业务信息；</span><br><span class="line">-除了头域外，消息中还可以携带任意类型的消息体（<span class="title">Body</span>），呼叫中最常使用的<span class="title">SDP</span>信息就是通过消息体在<span class="title">Client</span>和<span class="title">Server</span>之间传递的。</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>Server从接收到请求到处理完毕，要回复多个临时响应(Response)，和一个终结响应(Response)，终结响应有且只有一个。<br>]]>
+    
+    </summary>
+    
+      <category term="Ashtray刚" scheme="http://yoursite.com/tags/Ashtray%E5%88%9A/"/>
+    
+      <category term="RFC3261" scheme="http://yoursite.com/tags/RFC3261/"/>
+    
+      <category term="UAC" scheme="http://yoursite.com/tags/UAC/"/>
+    
+      <category term="UAS" scheme="http://yoursite.com/tags/UAS/"/>
+    
+      <category term="Voip" scheme="http://yoursite.com/tags/Voip/"/>
+    
+      <category term="proxy" scheme="http://yoursite.com/tags/proxy/"/>
+    
+      <category term="Ashtray刚" scheme="http://yoursite.com/categories/Ashtray%E5%88%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[并发2-Thread和Runnable]]></title>
+    <link href="http://yoursite.com/2016/01/11/process-and-thread-2/"/>
+    <id>http://yoursite.com/2016/01/11/process-and-thread-2/</id>
+    <published>2016-01-11T12:50:12.000Z</published>
+    <updated>2016-01-11T12:53:15.911Z</updated>
+    <content type="html"><![CDATA[<h2 id="java_xx-class_u53D1_u751F_u4E86_u4EC0_u4E48_uFF1A"><a href="#java_xx-class_u53D1_u751F_u4E86_u4EC0_u4E48_uFF1A" class="headerlink" title="java xx.class发生了什么："></a>java xx.class发生了什么：<br></h2><ul>
+<li>编写JVMThread.java<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JVMThread</span> </span>&#123;	</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] agrs)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000000</span>; i++) </span><br><span class="line">		&#123;</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>执行java JVMThread 两次</code></p>
+<p><code>可以看到任务管理器中(mac-os):</code>  </p>
+<blockquote>
+<p>501 14810 14798   0  2:44下午 ttys008    0:08.51 java JVMThread</p>
+<p>501 14811 14804   0  2:44下午 ttys009    0:02.73 java JVMThread</p>
+</blockquote>
+<a id="more"></a>
+<ul>
+<li><p>由此可见，java JVMThread 启动了两个JVM,其中每个JVM运行一个java程序</p>
+</li>
+<li><p>如果代码中没有创建线程（如上），JVM会启动一个主线程，和其他一系列线程(垃圾回收线程等)</p>
+</li>
+</ul>
+<h2 id="u521B_u5EFA_u7EBF_u7A0B_u7684_u4E24_u79CD_u65B9_u5F0F_uFF1A"><a href="#u521B_u5EFA_u7EBF_u7A0B_u7684_u4E24_u79CD_u65B9_u5F0F_uFF1A" class="headerlink" title="创建线程的两种方式："></a>创建线程的两种方式：</h2><ol>
+<li>继承Thread，重写run方法，使用start()使用线程        </li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class MyThread&#123;</span><br><span class="line">		     public static void main(String[] args) &#123;</span><br><span class="line">				System.out.println("主线程ID:+ Thread.currentThread().getId());</span><br><span class="line">				TestThread tt = new TestThread("子线程1");</span><br><span class="line">				tt.start();</span><br><span class="line">				TestThread tt2 = new TestThread("子线程2");</span><br><span class="line">				tt2.start();</span><br><span class="line">				TestThread tt3 = new TestThread("子线程2");</span><br><span class="line">				tt3.start();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestThread</span> <span class="keyword">extends</span> <span class="title">Thread</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> String name;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">TestThread</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(name);</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">		<span class="annotation">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">//在此书写线程的执行代码</span></span><br><span class="line">		System.out.println(name + <span class="string">"子线程ID:"</span> + Thread.currentThread().getId());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行之后，结果为：    </p>
+<blockquote>
+<p>线程3在线程2之后创建，却更早执行，说明了创建线程并不会阻塞主线程(main)，所有的新建线程都在同一起跑线等待获取CPU等资源</p>
+</blockquote>
+<ol>
+<li>实现Runnable接口，重写run方法</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyThread</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"主线程ID:"</span> + Thread.currentThread().getId());</span><br><span class="line">		TestThread run = <span class="keyword">new</span> TestThread();</span><br><span class="line">		Thread t = <span class="keyword">new</span> Thread(run);</span><br><span class="line">		Thread t2 = <span class="keyword">new</span> Thread(run);</span><br><span class="line">		t.start();</span><br><span class="line">		t2.start();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">	<span class="class"><span class="keyword">class</span> <span class="title">TestThread</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>&#123;</span><br><span class="line">		<span class="annotation">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">//	在此书写线程的执行代码</span></span><br><span class="line">		System.out.println(<span class="string">"子线程ID:"</span> + Thread.currentThread().getId());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="java_xx-class_u53D1_u751F_u4E86_u4EC0_u4E48_uFF1A"><a href="#java_xx-class_u53D1_u751F_u4E86_u4EC0_u4E48_uFF1A" class="headerlink" title="java xx.class发生了什么："></a>java xx.class发生了什么：<br /></h2><ul>
+<li>编写JVMThread.java<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JVMThread</span> </span>&#123;	</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] agrs)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000000</span>; i++) </span><br><span class="line">		&#123;</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>执行java JVMThread 两次</code></p>
+<p><code>可以看到任务管理器中(mac-os):</code>  </p>
+<blockquote>
+<p>501 14810 14798   0  2:44下午 ttys008    0:08.51 java JVMThread</p>
+<p>501 14811 14804   0  2:44下午 ttys009    0:02.73 java JVMThread</p>
+</blockquote>]]>
+    
+    </summary>
+    
+      <category term="Meitu凌" scheme="http://yoursite.com/tags/Meitu%E5%87%8C/"/>
+    
+      <category term="Runnable" scheme="http://yoursite.com/tags/Runnable/"/>
+    
+      <category term="process" scheme="http://yoursite.com/tags/process/"/>
+    
+      <category term="thread" scheme="http://yoursite.com/tags/thread/"/>
+    
+      <category term="进程与线程" scheme="http://yoursite.com/tags/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/"/>
+    
+      <category term="Meitu凌" scheme="http://yoursite.com/categories/Meitu%E5%87%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[并发1-进程和线程]]></title>
+    <link href="http://yoursite.com/2016/01/11/process-and-thread-1/"/>
+    <id>http://yoursite.com/2016/01/11/process-and-thread-1/</id>
+    <published>2016-01-11T11:12:12.000Z</published>
+    <updated>2016-01-11T12:54:41.554Z</updated>
+    <content type="html"><![CDATA[<h2 id="u8FDB_u7A0B_u662F_u4EC0_u4E48_uFF1A"><a href="#u8FDB_u7A0B_u662F_u4EC0_u4E48_uFF1A" class="headerlink" title="进程是什么："></a>进程是什么：</h2><ul>
+<li><p>计算机最初发明的初衷是用于解决耗时耗力的复杂计算，是一个计算器</p>
+</li>
+<li><p>最原始的计算机执行程序的过程如下：等待用户输入指令-&gt;用户输入-&gt;计算机操作-&gt;等待用户输入指令-&gt;用户输入-&gt;计算机操作。在用户思考或者输入的过程中,计算机就空闲下来。</p>
+</li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><p>后来有了批处理系统，用户可以把许多指令(如输入1，输入2)写在磁盘中，计算机的执行过<br>程变为：用户输入指令集合-&gt;取指令-&gt;执行-&gt;取指令-&gt;执行。        </p>
+</li>
+<li><p>批处理系统大大提高了便捷性，但是还是存在一个问题，假设指令集合中有A,B两个程序，当程序A进行I/O处理时，程序B只能等待程序A直到其运行完。也就是说，内存中只能有一个程序在执行。</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>内存举例</th>
+<th>程序One</th>
+<th>程序Two</th>
+<th>计算机中有两个程序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time1:</td>
+<td>内存</td>
+<td></td>
+<td>内存中装载程序One</td>
+</tr>
+<tr>
+<td>Time2:</td>
+<td></td>
+<td>内存</td>
+<td>内存中装载程序Two</td>
+</tr>
+</tbody>
+</table>
+<pre><code>    那么,如何在内存中装入多个程序呢？于是人们发明了进程，每个在运行的程序都看做
+一个进程，给每个进程分配合适大小的对应的内存地址空间，进程之间的空间互不扰，并且
+保存每个进程的运行状态。通过进程之间的相互切换，使计算机看起来在一段时间内有几个
+程序在同时执行。   
+</code></pre><table>
+<thead>
+<tr>
+<th>举例</th>
+<th>One</th>
+<th>Two</th>
+<th>计算机中有两个程序</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Time1:</td>
+<td>部分内存</td>
+<td>部分内存</td>
+<td>内存中装载程序One,Two,分别在不同的部分。</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>进程让程序之间的并发成为了可能，从宏观上看，某个时间段内有多个程序在同时执行，但实际上在某一时刻只有一个程序(一部分的内存)会得到CPU，进行执行。</p>
+</blockquote>
+<hr>
+<h2 id="u7EBF_u7A0B_u662F_u4EC0_u4E48_uFF1A"><a href="#u7EBF_u7A0B_u662F_u4EC0_u4E48_uFF1A" class="headerlink" title="线程是什么："></a>线程是什么：</h2><ul>
+<li><p>进程让程序之间的并发成为了可能，我们可以在电脑上同时听歌，打字了(两个不同的程序之间切换)。</p>
+</li>
+<li><p>但是人们对程序实时性的要求越来越高。比如对QQ音乐来说，它不仅要处理用户所发送的交互请求，还要播放歌曲。假设某一时刻QQ音乐在播放歌曲，你点击了“暂停”按钮，需要等待播放歌曲完毕之后才能处理“暂停”操作，这种程序肯定是不合格的。</p>
+</li>
+<li><p>于是人们把QQ音乐这个程序所对应的进程拆分成了多个线程，有播放歌曲的线程，处理交互请求的线程，每个线程负责一个独立的子任务，这样的话，我们点击了“暂停”按钮，QQ音乐会释放暂停播放歌曲的线程，让交互请求的线程处理用户的请求，响应完之后再切换回来，让播放歌曲的线程得到CPU。具体过程如下：</p>
+<blockquote>
+<p>播放线程———————挂起`````````````````播放线程———–      ———-用户点击暂停————–交互线程————处理完毕</p>
+</blockquote>
+</li>
+</ul>
+<p>所以说，线程让进程内的子任务并发成为了可能。</p>
+<hr>
+<h1 id="u7A0B_u5E8F_uFF0C_u8FDB_u7A0B_uFF0C_u7EBF_u7A0B_u4E09_u8005_u4E4B_u95F4_u7684_u5173_u7CFB_uFF1A"><a href="#u7A0B_u5E8F_uFF0C_u8FDB_u7A0B_uFF0C_u7EBF_u7A0B_u4E09_u8005_u4E4B_u95F4_u7684_u5173_u7CFB_uFF1A" class="headerlink" title="程序，进程，线程三者之间的关系："></a>程序，进程，线程三者之间的关系：</h1><ol>
+<li><p>程序是我们写的代码，需要对应到一个具体的进程来运行，进程间有独立的内存地址，互不干扰。线程是进程的子任务，属于同一进程的线程共享相同的内存。</p>
+</li>
+<li><p>进程让程序之间的并发成为了可能，线程让进程内的子任务并发成为了可能。</p>
+</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="u8FDB_u7A0B_u662F_u4EC0_u4E48_uFF1A"><a href="#u8FDB_u7A0B_u662F_u4EC0_u4E48_uFF1A" class="headerlink" title="进程是什么："></a>进程是什么：</h2><ul>
+<li><p>计算机最初发明的初衷是用于解决耗时耗力的复杂计算，是一个计算器</p>
+</li>
+<li><p>最原始的计算机执行程序的过程如下：等待用户输入指令-&gt;用户输入-&gt;计算机操作-&gt;等待用户输入指令-&gt;用户输入-&gt;计算机操作。在用户思考或者输入的过程中,计算机就空闲下来。</p>
+</li>
+</ul>]]>
+    
+    </summary>
+    
+      <category term="Meitu凌" scheme="http://yoursite.com/tags/Meitu%E5%87%8C/"/>
+    
+      <category term="process" scheme="http://yoursite.com/tags/process/"/>
+    
+      <category term="thread" scheme="http://yoursite.com/tags/thread/"/>
+    
+      <category term="进程与线程" scheme="http://yoursite.com/tags/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/"/>
+    
+      <category term="Meitu凌" scheme="http://yoursite.com/categories/Meitu%E5%87%8C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Openstack Barbican]]></title>
+    <link href="http://yoursite.com/2016/01/10/BarbicanOverview/"/>
+    <id>http://yoursite.com/2016/01/10/BarbicanOverview/</id>
+    <published>2016-01-10T12:12:12.000Z</published>
+    <updated>2016-01-11T11:53:47.360Z</updated>
+    <content type="html"><![CDATA[<h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><p>我在OpenStack Barbican项目中学习了1个多月，学到了很多，也做了一些贡献。在此写下总结，算是给自己的学习工作做一个交代。写完就不玩Barbican了。。。</p>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Barbican项目为OpenStack提供了密钥管理，它避免了在应用中硬编码密钥和加密算法，CA认证，还有一些机密数据的存储。</p>
+<a id="more"></a>
+<h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><p>Barbican项目从上到下可以分成3层。从上到下看，第一层是API层。跟多数OpenStack项目一样，Barbican项目也是采用Paste构建的REST API。<br>第二层是barbican逻辑控制层，提供一些封装，队列和一些访问控制等，最下面一层是插件层，提供多种多样的插件，提供最为基本的加解密功能。它可以对接软件化的密码算法，也可以对接硬件加密机。<br><a href="http://docs.openstack.org/developer/barbican/contribute/architecture.html" target="_blank" rel="external">官方文档</a></p>
+<h1 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h1><h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>Barbican的API同样是遵循REST风格，它利用了Paste这个Python库搭建。一下，简单介绍Paste库的使用。<br>首先是配置文件babrican-api-paste.ini</p>
+<blockquote>
+<p>[composite:main]<br><br>use = egg:Paste#urlmap<br><br>/: barbican_version<br><br>/v1: barbican_api</p>
+</blockquote>
+<p>这里定义了一个入口，main，然后根据接收到的URI进行具体的dispatch。<br>比如：</p>
+<ol>
+<li><a href="http://localhost:9311/" target="_blank" rel="external">http://localhost:9311/</a> <br><br>这个请求会被dispatch到/所代表的barbican_version进行处理</li>
+<li><a href="http://localhost:9300/v1/containers" target="_blank" rel="external">http://localhost:9300/v1/containers</a><br><br>这个请求会被dispatch到/v1代表的barbican_api进行处理。</li>
+</ol>
+<blockquote>
+<p>[pipeline:barbican_version]<br><br>pipeline = versionapp</p>
+</blockquote>
+<p>pipeline是一系列middleware的集合，个人理解为hook point，在一个pipeline中可以定义多个hook函数，改变数据流向。<br>如上面的定义，数据将流到versionapp中。</p>
+<blockquote>
+<p>[app:versionapp]<br><br>paste.app_factory = barbican.api.app:create_version_app</p>
+</blockquote>
+<p>这里就定义了versionapp所在的位置，所以，当barbican api接收到特定URI时，会执行这个函数。</p>
+<p>同理，当/v1这个标志被触发后，会执行预先设定好的函数。但是，这里稍复杂。</p>
+<blockquote>
+<p>[pipeline:barbican_api]<br><br>pipeline = keystone_authtoken context apiapp</p>
+</blockquote>
+<p>可见，当babrican接受了/v1的URI后，请求数据会先流到keystone_authtoken,然后context，最后才是apiapp。<br>这里简单展开介绍各个middleware了。keystone_authtoken是keystonemiddleware提供的，用于跟keystone交互的middleware，这样barbican就具备了获取keystone Token的能力。<br>context就是barbican中预先定义的类，用于将keystone Token植入到请求头中。最后才是真正处理请求的apiapp。</p>
+<p>经过了这些pipeline，请求终于作用到了具体的类中。<br>处理具体请求的响应函数都在barbican/api/controllers中，如何响应，请参照 <a href="http://pecan.readthedocs.org/en/latest/" target="_blank" rel="external">Pecan</a></p>
+<h2 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h2><p>其实，Barbican更像是一个agent，从用户中获取请求，并转发给plugin。所以，第二层，Barbican做了一些具体的工作，来协调，监视，审计转发。<br>在这一层中，有很多术语需要厘清。</p>
+<ol>
+<li>Secret 一份加密档案，可以是文本可以是二进制流。密钥就可以以secret的形式保存。</li>
+<li>Container 类似于文件夹（generic），多个secret的集合。</li>
+<li>ACL 提供RBAC访问控制。</li>
+<li>cas 证书</li>
+<li>quota 限定使用量</li>
+</ol>
+<p>这层的功能实现比较简单，但需要注意几点。</p>
+<ol>
+<li>Barbican采用sqlalchemy库与数据库交互。这个库很奇怪，以类的形式对应一张表格。<br>比如我想要一张保存secret的表格，那么我就要在secret这个类中，插入特定格式的信息，然后，我每次创建secret这个类的实例，那么表格中<br>就存在了这个条目。<ol>
+<li>在与plugin交互的方面，barbican定义了大量的数据结构，常常看的我犯晕。<a href="http://docs.openstack.org/developer/barbican/plugin/secret_store.html" target="_blank" rel="external">数据结构总览</a></li>
+</ol>
+</li>
+<li>文档里是有消息队列(queue(oslo-messaging))来支持多节点并行计算的，不过目前还没有实现。毕竟，Barbican这个项目还不是很成熟。</li>
+</ol>
+<h2 id="Plugin"><a href="#Plugin" class="headerlink" title="Plugin"></a>Plugin</h2><p>这一层我并没有接触，但是关键的数据结构都在Proxy设定好了，接口什么的都已经预先设置了，按照<a href="http://docs.openstack.org/developer/barbican/plugin/index.html" target="_blank" rel="external">文档</a>实现关键函数就可以了。</p>
+<p>Enjoy!</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><p>我在OpenStack Barbican项目中学习了1个多月，学到了很多，也做了一些贡献。在此写下总结，算是给自己的学习工作做一个交代。写完就不玩Barbican了。。。</p>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Barbican项目为OpenStack提供了密钥管理，它避免了在应用中硬编码密钥和加密算法，CA认证，还有一些机密数据的存储。</p>]]>
+    
+    </summary>
+    
+      <category term="OpenStack" scheme="http://yoursite.com/tags/OpenStack/"/>
+    
+      <category term="Opensource" scheme="http://yoursite.com/tags/Opensource/"/>
+    
+      <category term="nazca汀" scheme="http://yoursite.com/tags/nazca%E6%B1%80/"/>
+    
+      <category term="nazca汀" scheme="http://yoursite.com/categories/nazca%E6%B1%80/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Python爬虫（一）]]></title>
@@ -242,7 +536,7 @@
     <link href="http://yoursite.com/2015/11/11/N-file-open/"/>
     <id>http://yoursite.com/2015/11/11/N-file-open/</id>
     <published>2015-11-11T10:44:12.000Z</published>
-    <updated>2015-12-27T12:10:00.735Z</updated>
+    <updated>2016-01-11T13:36:02.704Z</updated>
     <content type="html"><![CDATA[<h3 id="u672C_u8D28"><a href="#u672C_u8D28" class="headerlink" title="本质"></a>本质</h3><p>我们都知道计算机的存储在物理上是二进制的，所以文本文件与二进制文件的区别并不是物理上的，而是</p>
 <pre><code>***逻辑上的***
 </code></pre><blockquote>

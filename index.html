@@ -251,6 +251,437 @@
             
               
                 
+                <a class="post-title-link" href="/2016/01/11/uac-uas/" itemprop="url">
+                  Voip语音电话
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2016-01-11T21:10:12+08:00" content="2016-01-11">
+              2016-01-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分類於
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Ashtray刚/" itemprop="url" rel="index">
+                    <span itemprop="name">Ashtray刚</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/11/uac-uas/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/11/uac-uas/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h3 id="Pro"><a href="#Pro" class="headerlink" title="Pro"></a>Pro</h3><p>RFC3261 Voip  (RFC2543 修订)</p>
+<blockquote>
+<p>SIP协议采用Client/Server模型。<br><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-每一个请求（Request）触发服务器的一个操作；</span><br><span class="line">-每个操作被称为方法（<span class="function"><span class="keyword">Method</span>）；</span><br><span class="line">-每个请求除了指明具体方法外，还携带了一系列的头域（<span class="title">Header</span> <span class="title">field</span>）,这些头域携带了各种业务信息；</span><br><span class="line">-除了头域外，消息中还可以携带任意类型的消息体（<span class="title">Body</span>），呼叫中最常使用的<span class="title">SDP</span>信息就是通过消息体在<span class="title">Client</span>和<span class="title">Server</span>之间传递的。</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>Server从接收到请求到处理完毕，要回复多个临时响应(Response)，和一个终结响应(Response)，终结响应有且只有一个。<br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/01/11/uac-uas/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/11/process-and-thread-2/" itemprop="url">
+                  并发2-Thread和Runnable
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2016-01-11T20:50:12+08:00" content="2016-01-11">
+              2016-01-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分類於
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Meitu凌/" itemprop="url" rel="index">
+                    <span itemprop="name">Meitu凌</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/11/process-and-thread-2/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/11/process-and-thread-2/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h2 id="java_xx-class_u53D1_u751F_u4E86_u4EC0_u4E48_uFF1A"><a href="#java_xx-class_u53D1_u751F_u4E86_u4EC0_u4E48_uFF1A" class="headerlink" title="java xx.class发生了什么："></a>java xx.class发生了什么：<br /></h2><ul>
+<li>编写JVMThread.java<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">JVMThread</span> </span>&#123;	</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] agrs)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000000</span>; i++) </span><br><span class="line">		&#123;</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><code>执行java JVMThread 两次</code></p>
+<p><code>可以看到任务管理器中(mac-os):</code>  </p>
+<blockquote>
+<p>501 14810 14798   0  2:44下午 ttys008    0:08.51 java JVMThread</p>
+<p>501 14811 14804   0  2:44下午 ttys009    0:02.73 java JVMThread</p>
+</blockquote>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/01/11/process-and-thread-2/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/11/process-and-thread-1/" itemprop="url">
+                  并发1-进程和线程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2016-01-11T19:12:12+08:00" content="2016-01-11">
+              2016-01-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分類於
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Meitu凌/" itemprop="url" rel="index">
+                    <span itemprop="name">Meitu凌</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/11/process-and-thread-1/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/11/process-and-thread-1/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h2 id="u8FDB_u7A0B_u662F_u4EC0_u4E48_uFF1A"><a href="#u8FDB_u7A0B_u662F_u4EC0_u4E48_uFF1A" class="headerlink" title="进程是什么："></a>进程是什么：</h2><ul>
+<li><p>计算机最初发明的初衷是用于解决耗时耗力的复杂计算，是一个计算器</p>
+</li>
+<li><p>最原始的计算机执行程序的过程如下：等待用户输入指令-&gt;用户输入-&gt;计算机操作-&gt;等待用户输入指令-&gt;用户输入-&gt;计算机操作。在用户思考或者输入的过程中,计算机就空闲下来。</p>
+</li>
+</ul>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/01/11/process-and-thread-1/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/01/10/BarbicanOverview/" itemprop="url">
+                  Openstack Barbican
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            發表於
+            <time itemprop="dateCreated" datetime="2016-01-10T20:12:12+08:00" content="2016-01-10">
+              2016-01-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp; 分類於
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/nazca汀/" itemprop="url" rel="index">
+                    <span itemprop="name">nazca汀</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/01/10/BarbicanOverview/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/10/BarbicanOverview/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><p>我在OpenStack Barbican项目中学习了1个多月，学到了很多，也做了一些贡献。在此写下总结，算是给自己的学习工作做一个交代。写完就不玩Barbican了。。。</p>
+<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Barbican项目为OpenStack提供了密钥管理，它避免了在应用中硬编码密钥和加密算法，CA认证，还有一些机密数据的存储。</p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/01/10/BarbicanOverview/#more" rel="contents">
+              閱讀全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2015/12/27/Low-level-web-crawler/" itemprop="url">
                   Python爬虫（一）
                 </a>
@@ -704,21 +1135,21 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">文章</span>
             </a>
           </div>
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">分類</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">15</span>
+              <span class="site-state-item-count">24</span>
               <span class="site-state-item-name">標籤</span>
               </a>
           </div>
@@ -793,8 +1224,8 @@
       <div class="footer-inner">
         <div class="copyright" >
   
-  &copy; 
-  <span itemprop="copyrightYear">2015</span>
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>
