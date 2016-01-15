@@ -35,7 +35,7 @@
 <link href="/css/main.css?v=0.4.5.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="OpenStack,Opensource,nazca汀," />
+  <meta name="keywords" content="HK港,JVM,环境,编译," />
 
 
 
@@ -53,19 +53,16 @@
 
 
 
-<meta name="description" content="Preface我在OpenStack Barbican项目中学习了1个多月，学到了很多，也做了一些贡献。在此写下总结，算是给自己的学习工作做一个交代。写完就不玩Barbican了。。。
-OverviewBarbican项目为OpenStack提供了密钥管理，它避免了在应用中硬编码密钥和加密算法，CA认证，还有一些机密数据的存储。">
+<meta name="description" content="OS：ubuntu14.04-32bitsource.list: source.list fron USTCjdk-6u45">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Openstack Barbican">
-<meta property="og:url" content="http://yoursite.com/2016/01/10/BarbicanOverview/index.html">
+<meta property="og:title" content="JVM编译软硬件环境，及编译方式">
+<meta property="og:url" content="http://yoursite.com/2016/01/14/jvm-bianyi/index.html">
 <meta property="og:site_name" content="Usix'Notes">
-<meta property="og:description" content="Preface我在OpenStack Barbican项目中学习了1个多月，学到了很多，也做了一些贡献。在此写下总结，算是给自己的学习工作做一个交代。写完就不玩Barbican了。。。
-OverviewBarbican项目为OpenStack提供了密钥管理，它避免了在应用中硬编码密钥和加密算法，CA认证，还有一些机密数据的存储。">
-<meta property="og:updated_time" content="2016-01-11T11:53:47.360Z">
+<meta property="og:description" content="OS：ubuntu14.04-32bitsource.list: source.list fron USTCjdk-6u45">
+<meta property="og:updated_time" content="2016-01-15T12:45:16.302Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Openstack Barbican">
-<meta name="twitter:description" content="Preface我在OpenStack Barbican项目中学习了1个多月，学到了很多，也做了一些贡献。在此写下总结，算是给自己的学习工作做一个交代。写完就不玩Barbican了。。。
-OverviewBarbican项目为OpenStack提供了密钥管理，它避免了在应用中硬编码密钥和加密算法，CA认证，还有一些机密数据的存储。">
+<meta name="twitter:title" content="JVM编译软硬件环境，及编译方式">
+<meta name="twitter:description" content="OS：ubuntu14.04-32bitsource.list: source.list fron USTCjdk-6u45">
 
 
 
@@ -77,7 +74,7 @@ OverviewBarbican项目为OpenStack提供了密钥管理，它避免了在应用�
   };
 </script>
 
-  <title> Openstack Barbican | Usix'Notes </title>
+  <title> JVM编译软硬件环境，及编译方式 | Usix'Notes </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="">
@@ -237,7 +234,7 @@ OverviewBarbican项目为OpenStack提供了密钥管理，它避免了在应用�
             
             
               
-                Openstack Barbican
+                JVM编译软硬件环境，及编译方式
               
             
           </h1>
@@ -246,8 +243,8 @@ OverviewBarbican项目为OpenStack提供了密钥管理，它避免了在应用�
         <div class="post-meta">
           <span class="post-time">
             發表於
-            <time itemprop="dateCreated" datetime="2016-01-10T20:12:12+08:00" content="2016-01-10">
-              2016-01-10
+            <time itemprop="dateCreated" datetime="2016-01-14T10:12:12+08:00" content="2016-01-14">
+              2016-01-14
             </time>
           </span>
 
@@ -256,8 +253,8 @@ OverviewBarbican项目为OpenStack提供了密钥管理，它避免了在应用�
               &nbsp; | &nbsp; 分類於
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/nazca汀/" itemprop="url" rel="index">
-                    <span itemprop="name">nazca汀</span>
+                  <a href="/categories/HK港/" itemprop="url" rel="index">
+                    <span itemprop="name">HK港</span>
                   </a>
                 </span>
 
@@ -272,8 +269,8 @@ OverviewBarbican项目为OpenStack提供了密钥管理，它避免了在应用�
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/01/10/BarbicanOverview/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/10/BarbicanOverview/" itemprop="commentsCount"></span>
+                <a href="/2016/01/14/jvm-bianyi/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/14/jvm-bianyi/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -292,52 +289,11 @@ OverviewBarbican项目为OpenStack提供了密钥管理，它避免了在应用�
       
 
       
-        <span itemprop="articleBody"><h1 id="Preface"><a href="#Preface" class="headerlink" title="Preface"></a>Preface</h1><p>我在OpenStack Barbican项目中学习了1个多月，学到了很多，也做了一些贡献。在此写下总结，算是给自己的学习工作做一个交代。写完就不玩Barbican了。。。</p>
-<h1 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h1><p>Barbican项目为OpenStack提供了密钥管理，它避免了在应用中硬编码密钥和加密算法，CA认证，还有一些机密数据的存储。</p>
+        <span itemprop="articleBody"><p>OS：ubuntu14.04-32bit<br>source.list: <a href="http://blog.csdn.net/duguteng/article/details/7014310" target="_blank" rel="external">source.list fron USTC</a><br>jdk-6u45</p>
 <a id="more"></a>
-<h1 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h1><p>Barbican项目从上到下可以分成3层。从上到下看，第一层是API层。跟多数OpenStack项目一样，Barbican项目也是采用Paste构建的REST API。<br>第二层是barbican逻辑控制层，提供一些封装，队列和一些访问控制等，最下面一层是插件层，提供多种多样的插件，提供最为基本的加解密功能。它可以对接软件化的密码算法，也可以对接硬件加密机。<br><a href="http://docs.openstack.org/developer/barbican/contribute/architecture.html" target="_blank" rel="external">官方文档</a></p>
-<h1 id="Analysis"><a href="#Analysis" class="headerlink" title="Analysis"></a>Analysis</h1><h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>Barbican的API同样是遵循REST风格，它利用了Paste这个Python库搭建。一下，简单介绍Paste库的使用。<br>首先是配置文件babrican-api-paste.ini</p>
-<blockquote>
-<p>[composite:main]<br><br>use = egg:Paste#urlmap<br><br>/: barbican_version<br><br>/v1: barbican_api</p>
-</blockquote>
-<p>这里定义了一个入口，main，然后根据接收到的URI进行具体的dispatch。<br>比如：</p>
-<ol>
-<li><a href="http://localhost:9311/" target="_blank" rel="external">http://localhost:9311/</a> <br><br>这个请求会被dispatch到/所代表的barbican_version进行处理</li>
-<li><a href="http://localhost:9300/v1/containers" target="_blank" rel="external">http://localhost:9300/v1/containers</a><br><br>这个请求会被dispatch到/v1代表的barbican_api进行处理。</li>
-</ol>
-<blockquote>
-<p>[pipeline:barbican_version]<br><br>pipeline = versionapp</p>
-</blockquote>
-<p>pipeline是一系列middleware的集合，个人理解为hook point，在一个pipeline中可以定义多个hook函数，改变数据流向。<br>如上面的定义，数据将流到versionapp中。</p>
-<blockquote>
-<p>[app:versionapp]<br><br>paste.app_factory = barbican.api.app:create_version_app</p>
-</blockquote>
-<p>这里就定义了versionapp所在的位置，所以，当barbican api接收到特定URI时，会执行这个函数。</p>
-<p>同理，当/v1这个标志被触发后，会执行预先设定好的函数。但是，这里稍复杂。</p>
-<blockquote>
-<p>[pipeline:barbican_api]<br><br>pipeline = keystone_authtoken context apiapp</p>
-</blockquote>
-<p>可见，当babrican接受了/v1的URI后，请求数据会先流到keystone_authtoken,然后context，最后才是apiapp。<br>这里简单展开介绍各个middleware了。keystone_authtoken是keystonemiddleware提供的，用于跟keystone交互的middleware，这样barbican就具备了获取keystone Token的能力。<br>context就是barbican中预先定义的类，用于将keystone Token植入到请求头中。最后才是真正处理请求的apiapp。</p>
-<p>经过了这些pipeline，请求终于作用到了具体的类中。<br>处理具体请求的响应函数都在barbican/api/controllers中，如何响应，请参照 <a href="http://pecan.readthedocs.org/en/latest/" target="_blank" rel="external">Pecan</a></p>
-<h2 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h2><p>其实，Barbican更像是一个agent，从用户中获取请求，并转发给plugin。所以，第二层，Barbican做了一些具体的工作，来协调，监视，审计转发。<br>在这一层中，有很多术语需要厘清。</p>
-<ol>
-<li>Secret 一份加密档案，可以是文本可以是二进制流。密钥就可以以secret的形式保存。</li>
-<li>Container 类似于文件夹（generic），多个secret的集合。</li>
-<li>ACL 提供RBAC访问控制。</li>
-<li>cas 证书</li>
-<li>quota 限定使用量</li>
-</ol>
-<p>这层的功能实现比较简单，但需要注意几点。</p>
-<ol>
-<li>Barbican采用sqlalchemy库与数据库交互。这个库很奇怪，以类的形式对应一张表格。<br>比如我想要一张保存secret的表格，那么我就要在secret这个类中，插入特定格式的信息，然后，我每次创建secret这个类的实例，那么表格中<br>就存在了这个条目。<ol>
-<li>在与plugin交互的方面，barbican定义了大量的数据结构，常常看的我犯晕。<a href="http://docs.openstack.org/developer/barbican/plugin/secret_store.html" target="_blank" rel="external">数据结构总览</a></li>
-</ol>
-</li>
-<li>文档里是有消息队列(queue(oslo-messaging))来支持多节点并行计算的，不过目前还没有实现。毕竟，Barbican这个项目还不是很成熟。</li>
-</ol>
-<h2 id="Plugin"><a href="#Plugin" class="headerlink" title="Plugin"></a>Plugin</h2><p>这一层我并没有接触，但是关键的数据结构都在Proxy设定好了，接口什么的都已经预先设置了，按照<a href="http://docs.openstack.org/developer/barbican/plugin/index.html" target="_blank" rel="external">文档</a>实现关键函数就可以了。</p>
-<p>Enjoy!</p>
-</span>
+<p>tools:<br>sourceInsight for source file reading.<br>eclipse / jdb for debug.<br>HSDB for JVM debug</p>
+<p>wiznote for note.<br>jclasslib for class file reading.<br>reference:<br>setup and compile:<br><a href="http://cduym.iteye.com/blog/1892416" target="_blank" rel="external">http://cduym.iteye.com/blog/1892416</a><br><a href="http://www.bubuko.com/infodetail-436627.html" target="_blank" rel="external">http://www.bubuko.com/infodetail-436627.html</a><br><a href="http://www.reader8.cn/jiaocheng/20140313/2270624.html" target="_blank" rel="external">http://www.reader8.cn/jiaocheng/20140313/2270624.html</a></p>
+<h3 id="to_be_continue_u2026"><a href="#to_be_continue_u2026" class="headerlink" title="to be continue…"></a>to be continue…</h3></span>
       
     </div>
 
@@ -345,11 +301,13 @@ OverviewBarbican项目为OpenStack提供了密钥管理，它避免了在应用�
       
         <div class="post-tags">
           
-            <a href="/tags/OpenStack/" rel="tag">#OpenStack</a>
+            <a href="/tags/HK港/" rel="tag">#HK港</a>
           
-            <a href="/tags/Opensource/" rel="tag">#Opensource</a>
+            <a href="/tags/JVM/" rel="tag">#JVM</a>
           
-            <a href="/tags/nazca汀/" rel="tag">#nazca汀</a>
+            <a href="/tags/环境/" rel="tag">#环境</a>
+          
+            <a href="/tags/编译/" rel="tag">#编译</a>
           
         </div>
       
@@ -358,17 +316,13 @@ OverviewBarbican项目为OpenStack提供了密钥管理，它避免了在应用�
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/12/27/Low-level-web-crawler/" rel="next" title="Python爬虫（一）">
-                <i class="fa fa-chevron-left"></i> Python爬虫（一）
+              <a href="/2016/01/11/uac-uas/" rel="next" title="Voip语音电话">
+                <i class="fa fa-chevron-left"></i> Voip语音电话
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/01/11/process-and-thread-1/" rel="prev" title="并发1-进程和线程">
-                并发1-进程和线程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -395,8 +349,8 @@ OverviewBarbican项目为OpenStack提供了密钥管理，它避免了在应用�
         
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/01/10/BarbicanOverview/"
-           data-title="Openstack Barbican" data-url="http://yoursite.com/2016/01/10/BarbicanOverview/">
+      <div class="ds-thread" data-thread-key="2016/01/14/jvm-bianyi/"
+           data-title="JVM编译软硬件环境，及编译方式" data-url="http://yoursite.com/2016/01/14/jvm-bianyi/">
       </div>
     
   </div>
@@ -526,7 +480,7 @@ OverviewBarbican项目为OpenStack提供了密钥管理，它避免了在应用�
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Preface"><span class="nav-number">1.</span> <span class="nav-text">Preface</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview"><span class="nav-number">2.</span> <span class="nav-text">Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Architecture"><span class="nav-number">3.</span> <span class="nav-text">Architecture</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Analysis"><span class="nav-number">4.</span> <span class="nav-text">Analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#API"><span class="nav-number">4.1.</span> <span class="nav-text">API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Proxy"><span class="nav-number">4.2.</span> <span class="nav-text">Proxy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Plugin"><span class="nav-number">4.3.</span> <span class="nav-text">Plugin</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#to_be_continue_u2026"><span class="nav-number">1.</span> <span class="nav-text">to be continue…</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
