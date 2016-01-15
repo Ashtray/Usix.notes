@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2016-01-15T12:45:16.302Z</updated>
+  <updated>2016-01-15T12:51:57.554Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -19,14 +19,14 @@
     <link href="http://yoursite.com/2016/01/14/jvm-bianyi/"/>
     <id>http://yoursite.com/2016/01/14/jvm-bianyi/</id>
     <published>2016-01-14T02:12:12.000Z</published>
-    <updated>2016-01-15T12:45:16.302Z</updated>
-    <content type="html"><![CDATA[<p>OS：ubuntu14.04-32bit<br>source.list: <a href="http://blog.csdn.net/duguteng/article/details/7014310" target="_blank" rel="external">source.list fron USTC</a><br>jdk-6u45</p>
+    <updated>2016-01-15T12:51:57.554Z</updated>
+    <content type="html"><![CDATA[<p>OS：ubuntu14.04-32bit<br>source.list: <a href="http://blog.csdn.net/duguteng/article/details/7014310" target="_blank" rel="external">source.list from USTC</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdk-<span class="number">6</span>u45</span><br></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <p>tools:<br>sourceInsight for source file reading.<br>eclipse / jdb for debug.<br>HSDB for JVM debug</p>
 <p>wiznote for note.<br>jclasslib for class file reading.<br>reference:<br>setup and compile:<br><a href="http://cduym.iteye.com/blog/1892416" target="_blank" rel="external">http://cduym.iteye.com/blog/1892416</a><br><a href="http://www.bubuko.com/infodetail-436627.html" target="_blank" rel="external">http://www.bubuko.com/infodetail-436627.html</a><br><a href="http://www.reader8.cn/jiaocheng/20140313/2270624.html" target="_blank" rel="external">http://www.reader8.cn/jiaocheng/20140313/2270624.html</a></p>
 <h3 id="to_be_continue_u2026"><a href="#to_be_continue_u2026" class="headerlink" title="to be continue…"></a>to be continue…</h3>]]></content>
     <summary type="html">
-    <![CDATA[<p>OS：ubuntu14.04-32bit<br>source.list: <a href="http://blog.csdn.net/duguteng/article/details/7014310">source.list fron USTC</a><br>jdk-6u45</p>]]>
+    <![CDATA[<p>OS：ubuntu14.04-32bit<br>source.list: <a href="http://blog.csdn.net/duguteng/article/details/7014310">source.list from USTC</a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jdk-<span class="number">6</span>u45</span><br></pre></td></tr></table></figure></p>]]>
     
     </summary>
     
